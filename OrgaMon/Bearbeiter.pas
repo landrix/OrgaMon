@@ -72,13 +72,8 @@ type
     IB_SearchBar1: TIB_SearchBar;
     IB_UpdateBar1: TIB_UpdateBar;
     Image3: TImage;
-    JvOfficeColorButton1: TJvOfficeColorButton;
-    JvOfficeColorButton2: TJvOfficeColorButton;
     SpeedButton21: TSpeedButton;
     Button2: TButton;
-    procedure JvOfficeColorButton2ColorChange(Sender: TObject);
-    procedure JvOfficeColorButton1ColorChange(Sender: TObject);
-    procedure JvOfficeColorButton1Click(Sender: TObject);
     procedure IB_Query1BeforePost(IB_Dataset: TIB_Dataset);
     procedure FormActivate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
@@ -95,6 +90,12 @@ type
     procedure Image3Click(Sender: TObject);
     procedure SpeedButton21Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+  private
+    JvOfficeColorButton1: TJvOfficeColorButton;
+    JvOfficeColorButton2: TJvOfficeColorButton;
+    procedure JvOfficeColorButton2ColorChange(Sender: TObject);
+    procedure JvOfficeColorButton1ColorChange(Sender: TObject);
+    procedure JvOfficeColorButton1Click(Sender: TObject);
   private
 
     { Private-Deklarationen }
@@ -209,6 +210,90 @@ end;
 procedure TFormBearbeiter.FormCreate(Sender: TObject);
 begin
   StartDebug('Bearbeiter');
+
+  JvOfficeColorButton1 := TJvOfficeColorButton.Create(self);
+  JvOfficeColorButton1.Parent := self;
+  with JvOfficeColorButton1 do
+  begin
+    Left := 117;
+    Top := 175;
+    Width := 44;
+    Height := 22;
+    ColorDialogOptions := [cdAnyColor];
+    TabOrder := 7;
+    SelectedColor := clDefault;
+    HotTrackFont.Charset := DEFAULT_CHARSET;
+    HotTrackFont.Color := clWindowText;
+    HotTrackFont.Height := -11;
+    HotTrackFont.Name := 'Tahoma';
+    HotTrackFont.Style := [];
+    Properties.NoneColorCaption := 'No Color';
+    Properties.DefaultColorCaption := 'Automatic';
+    Properties.CustomColorCaption := 'Other Colors...';
+    Properties.NoneColorHint := 'No Color';
+    Properties.DefaultColorHint := 'Automatic';
+    Properties.CustomColorHint := 'Other Colors...';
+    Properties.NoneColorFont.Charset := DEFAULT_CHARSET;
+    Properties.NoneColorFont.Color := clWindowText;
+    Properties.NoneColorFont.Height := -11;
+    Properties.NoneColorFont.Name := 'Tahoma';
+    Properties.NoneColorFont.Style := [];
+    Properties.DefaultColorFont.Charset := DEFAULT_CHARSET;
+    Properties.DefaultColorFont.Color := clWindowText;
+    Properties.DefaultColorFont.Height := -11;
+    Properties.DefaultColorFont.Name := 'Tahoma';
+    Properties.DefaultColorFont.Style := [];
+    Properties.CustomColorFont.Charset := DEFAULT_CHARSET;
+    Properties.CustomColorFont.Color := clWindowText;
+    Properties.CustomColorFont.Height := -11;
+    Properties.CustomColorFont.Name := 'Tahoma';
+    Properties.CustomColorFont.Style := [];
+    Properties.FloatWindowCaption := 'Color Window';
+    Properties.DragBarHint := 'Drag to float';
+    OnColorChange := JvOfficeColorButton1ColorChange;
+    OnClick := JvOfficeColorButton1Click;
+  end;
+  JvOfficeColorButton2 := TJvOfficeColorButton.Create(self);
+  JvOfficeColorButton2.Parent := self;
+  with JvOfficeColorButton2 do
+  begin
+    Left := 117;
+    Top := 197;
+    Width := 44;
+    Height := 22;
+    TabOrder := 8;
+    SelectedColor := clDefault;
+    HotTrackFont.Charset := DEFAULT_CHARSET;
+    HotTrackFont.Color := clWindowText;
+    HotTrackFont.Height := -11;
+    HotTrackFont.Name := 'Tahoma';
+    HotTrackFont.Style := [];
+    Properties.NoneColorCaption := 'No Color';
+    Properties.DefaultColorCaption := 'Automatic';
+    Properties.CustomColorCaption := 'Other Colors...';
+    Properties.NoneColorHint := 'No Color';
+    Properties.DefaultColorHint := 'Automatic';
+    Properties.CustomColorHint := 'Other Colors...';
+    Properties.NoneColorFont.Charset := DEFAULT_CHARSET;
+    Properties.NoneColorFont.Color := clWindowText;
+    Properties.NoneColorFont.Height := -11;
+    Properties.NoneColorFont.Name := 'Tahoma';
+    Properties.NoneColorFont.Style := [];
+    Properties.DefaultColorFont.Charset := DEFAULT_CHARSET;
+    Properties.DefaultColorFont.Color := clWindowText;
+    Properties.DefaultColorFont.Height := -11;
+    Properties.DefaultColorFont.Name := 'Tahoma';
+    Properties.DefaultColorFont.Style := [];
+    Properties.CustomColorFont.Charset := DEFAULT_CHARSET;
+    Properties.CustomColorFont.Color := clWindowText;
+    Properties.CustomColorFont.Height := -11;
+    Properties.CustomColorFont.Name := 'Tahoma';
+    Properties.CustomColorFont.Style := [];
+    Properties.FloatWindowCaption := 'Color Window';
+    Properties.DragBarHint := 'Drag to float';
+    OnColorChange := JvOfficeColorButton2ColorChange;
+  end;
+
   button1.caption := '<< ' + UserName;
   label4.visible := false;
   EmptyPic := _CreateUserLogo('-.-', clred, clblack);

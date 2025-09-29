@@ -71,3 +71,12 @@ lib
 /FirebirdRestore/*.dcu
 /FirebirdRestore/*.exe
 /Oc/*.exe
+
+_Install
+SynEdit-20025.08.24
+ibo5_12_5_3125
+jcl
+jvcl
+Firebird-3.0.13.33818-0-Win32.zip
+*.dsk
+*.~dsk

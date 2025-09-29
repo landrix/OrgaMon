@@ -155,9 +155,6 @@ type
     Button85: TButton;
     Button88: TButton;
     Button89: TButton;
-    {$ifndef FPC}
-    JvAppIniFileStorage1: TJvAppIniFileStorage;
-    {$endif}
     Button54: TButton;
     Button91: TButton;
     Button47: TButton;
@@ -260,6 +257,7 @@ type
     sHotKeys: TStringList;
 {$ifndef FPC}
     SysHotKey1: TSysHotKEy;
+    JvAppIniFileStorage1: TJvAppIniFileStorage;
 {$endif}
     procedure HotKey(Sender: TObject; Index: integer);
   public
@@ -354,6 +352,16 @@ uses
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
   StartDebug('Main');
+  
+  JvAppIniFileStorage1 := TJvAppIniFileStorage.Create(self);
+  with JvAppIniFileStorage1 do
+  begin
+    StorageOptions.BooleanStringTrueValues := 'TRUE, YES, Y';
+    StorageOptions.BooleanStringFalseValues := 'FALSE, NO, N';
+    AutoFlush := True;
+    AutoReload := True;
+    Location := flCustom;
+  end;
 
   caption := cAppName;
 

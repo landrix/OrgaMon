@@ -10,7 +10,6 @@ object FormPerson: TFormPerson
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
   OnCreate = FormCreate
@@ -19,8 +18,6 @@ object FormPerson: TFormPerson
   DesignSize = (
     1013
     704)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Label13: TLabel
     Left = 156
     Top = 459
@@ -1053,9 +1050,9 @@ object FormPerson: TFormPerson
         Caption = 'Begriff'
       end
       object Label2: TLabel
-        Left = 12
+        Left = 13
         Top = 58
-        Width = 52
+        Width = 51
         Height = 13
         Alignment = taRightJustify
         Caption = 'Vorname'
@@ -1354,41 +1351,41 @@ object FormPerson: TFormPerson
         Caption = 'Handy'
       end
       object Label5: TLabel
-        Left = 50
+        Left = 51
         Top = 49
-        Width = 68
+        Width = 67
         Height = 13
         Alignment = taRightJustify
         Caption = 'Tel. (privat)'
       end
       object Label6: TLabel
-        Left = 16
+        Left = 17
         Top = 69
-        Width = 102
+        Width = 101
         Height = 13
         Alignment = taRightJustify
         Caption = 'Tel. (gesch'#228'ftlich)'
       end
       object Label7: TLabel
-        Left = 411
+        Left = 412
         Top = 27
-        Width = 67
+        Width = 66
         Height = 13
         Alignment = taRightJustify
         Caption = 'Fax (privat)'
       end
       object Label8: TLabel
-        Left = 377
+        Left = 378
         Top = 48
-        Width = 101
+        Width = 100
         Height = 13
         Alignment = taRightJustify
         Caption = 'Fax (gesch'#228'ftlich)'
       end
       object Label10: TLabel
-        Left = 431
+        Left = 432
         Top = 67
-        Width = 47
+        Width = 46
         Height = 13
         Alignment = taRightJustify
         Caption = '&WebSite'
@@ -1836,7 +1833,7 @@ object FormPerson: TFormPerson
       object Label39: TLabel
         Left = 598
         Top = 11
-        Width = 118
+        Width = 117
         Height = 13
         Caption = 'Kreditkarte Typ+PIN'
       end
@@ -1864,7 +1861,7 @@ object FormPerson: TFormPerson
       object Label43: TLabel
         Left = 168
         Top = 11
-        Width = 110
+        Width = 109
         Height = 13
         Caption = 'ELV - Kontoinhaber'
       end
@@ -1926,7 +1923,7 @@ object FormPerson: TFormPerson
       object Label55: TLabel
         Left = 487
         Top = 62
-        Width = 75
+        Width = 74
         Height = 13
         Caption = 'ELV-Freigabe'
       end
@@ -2145,10 +2142,17 @@ object FormPerson: TFormPerson
         Caption = 'Firefox-iMacro'
         Visible = False
       end
+      object Label61: TLabel
+        Left = 684
+        Top = 12
+        Width = 89
+        Height = 13
+        Caption = 'Rechnung eMail'
+      end
       object IB_Edit9: TIB_Edit
-        Left = 89
-        Top = 7
-        Width = 905
+        Left = 91
+        Top = 8
+        Width = 574
         Height = 21
         DataField = 'EMAIL'
         DataSource = IB_DataSource1
@@ -2164,7 +2168,7 @@ object FormPerson: TFormPerson
         DataSource = IB_DataSource1
         Visible = False
         ParentBackground = False
-        TabOrder = 2
+        TabOrder = 3
       end
       object IB_Edit23: TIB_Edit
         Left = 89
@@ -2174,7 +2178,7 @@ object FormPerson: TFormPerson
         DataField = 'USER_ID'
         DataSource = IB_DataSource1
         ParentBackground = False
-        TabOrder = 1
+        TabOrder = 2
       end
       object IB_Memo2: TIB_Memo
         Left = 457
@@ -2184,7 +2188,7 @@ object FormPerson: TFormPerson
         DataField = 'USER_DIENSTE'
         DataSource = IB_DataSource1
         ParentBackground = False
-        TabOrder = 3
+        TabOrder = 4
         AutoSize = False
         ScrollBars = ssVertical
       end
@@ -2194,7 +2198,7 @@ object FormPerson: TFormPerson
         Width = 130
         Height = 19
         Caption = 'Passwort zuteilen'
-        TabOrder = 4
+        TabOrder = 5
         Visible = False
         OnClick = Button17Click
       end
@@ -2205,12 +2209,22 @@ object FormPerson: TFormPerson
         Height = 21
         Style = csDropDownList
         ItemIndex = 0
-        TabOrder = 5
+        TabOrder = 6
         Visible = False
         OnDropDown = ComboBox1DropDown
         OnSelect = ComboBox1Select
         Items.Strings = (
           '')
+      end
+      object IB_Edit45: TIB_Edit
+        Left = 783
+        Top = 8
+        Width = 202
+        Height = 21
+        DataField = 'EMAIL_2'
+        DataSource = IB_DataSource1
+        ParentBackground = False
+        TabOrder = 1
       end
     end
     object TabSheet13: TTabSheet
@@ -2219,28 +2233,28 @@ object FormPerson: TFormPerson
       object Label27: TLabel
         Left = 797
         Top = 10
-        Width = 63
+        Width = 62
         Height = 13
         Caption = 'Versandart'
       end
       object Label28: TLabel
         Left = 756
         Top = 31
-        Width = 104
+        Width = 103
         Height = 13
         Caption = 'Versand-Pr'#228'misse'
       end
       object Label29: TLabel
         Left = 765
         Top = 52
-        Width = 95
+        Width = 94
         Height = 13
         Caption = 'Treffer pro Seite'
       end
       object Label60: TLabel
         Left = 783
         Top = 96
-        Width = 77
+        Width = 76
         Height = 13
         Caption = 'festes '#220'-Fach'
       end
@@ -2793,14 +2807,14 @@ object FormPerson: TFormPerson
       object Label53: TLabel
         Left = 546
         Top = 62
-        Width = 138
+        Width = 137
         Height = 13
         Caption = 'Betriebs-Jahres-Summe'
       end
       object Label54: TLabel
         Left = 345
         Top = 7
-        Width = 129
+        Width = 128
         Height = 13
         Caption = 'Versicherungsnummer'
       end
@@ -2888,12 +2902,12 @@ object FormPerson: TFormPerson
         Top = 0
         Width = 1000
         Height = 115
-        OnClickCheck = CheckListBox1ClickCheck
         Align = alClient
         Color = clWhite
         Columns = 4
         ItemHeight = 13
         TabOrder = 0
+        OnClickCheck = CheckListBox1ClickCheck
       end
     end
   end
@@ -3263,6 +3277,7 @@ object FormPerson: TFormPerson
       ',PRIV_FAX'
       ',GESCH_FAX'
       ',EMAIL'
+      ',EMAIL_2'
       ',WEBSITE'
       ',INTERESSE_R'
       ',KREDIT_R'

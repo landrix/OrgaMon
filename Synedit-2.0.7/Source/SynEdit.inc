@@ -124,7 +124,13 @@
 { VERXXX to SYN_COMPILERX, SYN_DELPHIX and SYN_CPPBX mappings                  }
 {------------------------------------------------------------------------------}
 
-{$IFDEF VER310}
+{$IFDEF VER370} //Delphi 13
+  {$DEFINE SYN_COMPILER_15}
+  {$DEFINE SYN_DELPHI}
+  {$DEFINE SYN_DELPHI_2011}
+{$ENDIF}
+
+{$IFDEF VER360} //Delphi 12
   {$DEFINE SYN_COMPILER_15}
   {$DEFINE SYN_DELPHI}
   {$DEFINE SYN_DELPHI_2011}

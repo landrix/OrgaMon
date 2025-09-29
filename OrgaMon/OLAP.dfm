@@ -10,14 +10,12 @@ object FormOLAP: TFormOLAP
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
+  OnCreate = FormCreate
   DesignSize = (
     988
     534)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Label2: TLabel
     Left = 13
     Top = 469
@@ -363,54 +361,8 @@ object FormOLAP: TFormOLAP
     Anchors = [akLeft, akRight, akBottom]
     TabOrder = 3
   end
-  object SynMemo1: TSynMemo
-    Left = 13
-    Top = 71
-    Width = 964
-    Height = 410
-    Anchors = [akLeft, akTop, akRight, akBottom]
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -12
-    Font.Name = 'Courier New'
-    Font.Style = []
-    TabOrder = 4
-    Gutter.Font.Charset = DEFAULT_CHARSET
-    Gutter.Font.Color = clWindowText
-    Gutter.Font.Height = -11
-    Gutter.Font.Name = 'Courier New'
-    Gutter.Font.Style = []
-    Highlighter = SynSQLSyn1
-    Lines.Strings = (
-      'SynMemo1')
-    RemovedKeystrokes = <
-      item
-        Command = ecContextHelp
-        ShortCut = 112
-      end>
-    AddedKeystrokes = <
-      item
-        Command = ecContextHelp
-        ShortCut = 16496
-      end>
-  end
   object SaveDialog1: TSaveDialog
     Left = 640
     Top = 8
-  end
-  object SynSQLSyn1: TSynSQLSyn
-    CommentAttri.Foreground = 43520
-    DataTypeAttri.Style = [fsBold, fsStrikeOut]
-    DefaultPackageAttri.Style = []
-    DelimitedIdentifierAttri.Style = [fsBold]
-    FunctionAttri.Foreground = clBlack
-    FunctionAttri.Style = []
-    IdentifierAttri.Foreground = clMaroon
-    KeyAttri.Foreground = 11162880
-    StringAttri.Foreground = 16737894
-    SymbolAttri.Foreground = clBlack
-    SQLDialect = sqlInterbase6
-    Left = 144
-    Top = 96
   end
 end

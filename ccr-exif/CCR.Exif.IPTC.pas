@@ -19,6 +19,7 @@
 {**************************************************************************************}
 
 {$I CCR.Exif.inc}
+
 unit CCR.Exif.IPTC;
 {
   As saved, IPTC data is a flat list of tags ('datasets'), no more no less, which is
@@ -53,7 +54,7 @@ type
   TIPTCRepeatablePairs = array of TIPTCRepeatablePair;
 {$ENDIF}
 
-  TIPTCStringArray = type Types.TStringDynArray; //using 'type' means the helper defined below will only apply to it
+  TIPTCStringArray = {$IFDEF GenericTStringDynArray} Array of String {$ELSE} type Types.TStringDynArray {$ENDIF}; //using 'type' means the helper defined below will on?ly apply to it
 
   {$IFDEF XE3+}
   TIPTCStringArrayHelper = record helper for TIPTCStringArray

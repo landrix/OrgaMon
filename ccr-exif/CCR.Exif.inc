@@ -60,6 +60,10 @@
   {$DEFINE XE3+}
 {$IFEND}
 
+{$IF CompilerVersion >= 33}
+  {$DEFINE GenericTStringDynArray}
+{$IFEND}
+
 {$IF (CompilerVersion = 26) AND Defined(NEXTGEN)}
   {$DEFINE NeedHausladenByteStringsFix}
 {$IFEND}

@@ -1,4 +1,4 @@
-﻿====================================
+====================================
 * PROJEKT: OrgaMon
 * SOURCE DIR: ..\OrgaMon
 * PUBLIC: YES
@@ -19,6 +19,9 @@ Zentral auf InterNet-Technologien abgestimmt. Beinhaltet einen XML-RPC-Server, u
 Dokumentation
 
 @<a href="https://wiki.orgamon.org/"><font color="blue">Weblink: Onlinedokumentation "OrgaMon"</font></a href>
+
+Rev 8.768 (29.09.2025) Sven Harazim
+  Neu: E-Mail-Rechnungsadresse zur Person - vorhandenes Feld PERSON.EMAIL_2 genutzt
 
 Rev 8.767 (25.04.2025) Michael Jelinski
   Neu: Erweiterung des Übersetzers um eine Filterfunktion (Entfernen von - Zeichen aus einem Feld)    

@@ -60,8 +60,6 @@ type
     Label4: TLabel;
     ProgressBar1: TProgressBar;
     Image2: TImage;
-    SynMemo1: TSynMemo;
-    SynSQLSyn1: TSynSQLSyn;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
@@ -75,8 +73,11 @@ type
     procedure SpeedButton3Click(Sender: TObject);
     procedure SpeedButton4Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
-    { Private-Deklarationen }
+    SynMemo1: TSynMemo;
+    SynSQLSyn1: TSynSQLSyn;
+
     Initialized: boolean;
 
     procedure ReFreshFileList;
@@ -173,6 +174,61 @@ begin
     Initialized := true;
   end;
   ReFreshFileList;
+end;
+
+procedure TFormOLAP.FormCreate(Sender: TObject);
+begin
+  SynMemo1 := TSynMemo.Create(self);
+  with SynMemo1 do
+  begin
+    Parent := self;
+    Left := 13;
+    Top := 71;
+    Width := 964;
+    Height := 410;
+    Anchors := [akLeft, akTop, akRight, akBottom];
+    Font.Charset := DEFAULT_CHARSET;
+    Font.Color := clWindowText;
+    Font.Height := -12;
+    Font.Name := 'Courier New';
+    Font.Style := [];
+    TabOrder := 4;
+    Gutter.Font.Charset := DEFAULT_CHARSET;
+    Gutter.Font.Color := clWindowText;
+    Gutter.Font.Height := -11;
+    Gutter.Font.Name := 'Courier New';
+    Gutter.Font.Style := [];
+    Highlighter := SynSQLSyn1;
+//    RemovedKeystrokes.item := <;
+//      item
+//        Command := ecContextHelp
+//        ShortCut := 112
+//      end>
+//    AddedKeystrokes := <
+//      item
+//        Command := ecContextHelp
+//        ShortCut := 16496
+//      end>
+  end;
+  SynSQLSyn1 := TSynSQLSyn.Create(self);
+  with SynSQLSyn1 do
+  begin
+    Parent := self;
+    CommentAttri.Foreground := 43520;
+    DataTypeAttri.Style := [fsBold, fsStrikeOut];
+    DefaultPackageAttri.Style := [];
+    DelimitedIdentifierAttri.Style := [fsBold];
+    FunctionAttri.Foreground := clBlack;
+    FunctionAttri.Style := [];
+    IdentifierAttri.Foreground := clMaroon;
+    KeyAttri.Foreground := 11162880;
+    StringAttri.Foreground := 16737894;
+    SymbolAttri.Foreground := clBlack;
+    SQLDialect := sqlInterbase6;
+    Left := 144;
+    Top := 96;
+  end;
+
 end;
 
 procedure TFormOLAP.Button1Click(Sender: TObject);

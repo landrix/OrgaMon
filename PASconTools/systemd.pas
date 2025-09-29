@@ -260,7 +260,7 @@ begin
 {$IFDEF FPC}
   BroadCaster.broadcast(OutStr, 9, '');
 {$ELSE}
-{$IFDEF VER310}
+{$IFDEF VER360} //Delphi 12
   BroadCaster.broadcast(OutStr, 9, '');
 {$ELSE}
   BroadCaster.broadcast(OutStr, 9, '', TEncoding.ANSI);

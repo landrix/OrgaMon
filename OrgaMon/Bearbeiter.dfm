@@ -12,14 +12,11 @@ object FormBearbeiter: TFormBearbeiter
   Font.Name = 'Verdana'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnDeactivate = FormDeactivate
   OnKeyPress = FormKeyPress
-  PixelsPerInch = 96
-  TextHeight = 13
   object Image3: TImage
     Left = 537
     Top = 8
@@ -189,6 +186,7 @@ object FormBearbeiter: TFormBearbeiter
     Height = 207
     CustomGlyphsSupplied = []
     DataSource = IB_DataSource1
+    ParentBackground = False
     PreventDeleting = True
     TabOrder = 0
     ListBoxStyle = True
@@ -256,6 +254,7 @@ object FormBearbeiter: TFormBearbeiter
       Height = 97
       DataField = 'STATUS'
       DataSource = IB_DataSource1
+      ParentBackground = False
       TabOrder = 0
       AutoSize = False
     end
@@ -290,6 +289,7 @@ object FormBearbeiter: TFormBearbeiter
       Height = 21
       DataField = 'KUERZEL'
       DataSource = IB_DataSource1
+      ParentBackground = False
       TabOrder = 4
       OnChange = IB_Edit1Change
     end
@@ -300,6 +300,7 @@ object FormBearbeiter: TFormBearbeiter
       Height = 21
       DataField = 'USERNAME'
       DataSource = IB_DataSource1
+      ParentBackground = False
       TabOrder = 5
     end
     object Button1: TButton
@@ -310,82 +311,6 @@ object FormBearbeiter: TFormBearbeiter
       Caption = '<- %UserName%'
       TabOrder = 6
       OnClick = Button1Click
-    end
-    object JvOfficeColorButton1: TJvOfficeColorButton
-      Left = 117
-      Top = 175
-      Width = 44
-      Height = 22
-      ColorDialogOptions = [cdAnyColor]
-      TabOrder = 7
-      SelectedColor = clDefault
-      HotTrackFont.Charset = DEFAULT_CHARSET
-      HotTrackFont.Color = clWindowText
-      HotTrackFont.Height = -11
-      HotTrackFont.Name = 'Tahoma'
-      HotTrackFont.Style = []
-      Properties.NoneColorCaption = 'No Color'
-      Properties.DefaultColorCaption = 'Automatic'
-      Properties.CustomColorCaption = 'Other Colors...'
-      Properties.NoneColorHint = 'No Color'
-      Properties.DefaultColorHint = 'Automatic'
-      Properties.CustomColorHint = 'Other Colors...'
-      Properties.NoneColorFont.Charset = DEFAULT_CHARSET
-      Properties.NoneColorFont.Color = clWindowText
-      Properties.NoneColorFont.Height = -11
-      Properties.NoneColorFont.Name = 'Tahoma'
-      Properties.NoneColorFont.Style = []
-      Properties.DefaultColorFont.Charset = DEFAULT_CHARSET
-      Properties.DefaultColorFont.Color = clWindowText
-      Properties.DefaultColorFont.Height = -11
-      Properties.DefaultColorFont.Name = 'Tahoma'
-      Properties.DefaultColorFont.Style = []
-      Properties.CustomColorFont.Charset = DEFAULT_CHARSET
-      Properties.CustomColorFont.Color = clWindowText
-      Properties.CustomColorFont.Height = -11
-      Properties.CustomColorFont.Name = 'Tahoma'
-      Properties.CustomColorFont.Style = []
-      Properties.FloatWindowCaption = 'Color Window'
-      Properties.DragBarHint = 'Drag to float'
-      OnColorChange = JvOfficeColorButton1ColorChange
-      OnClick = JvOfficeColorButton1Click
-    end
-    object JvOfficeColorButton2: TJvOfficeColorButton
-      Left = 117
-      Top = 197
-      Width = 44
-      Height = 22
-      TabOrder = 8
-      SelectedColor = clDefault
-      HotTrackFont.Charset = DEFAULT_CHARSET
-      HotTrackFont.Color = clWindowText
-      HotTrackFont.Height = -11
-      HotTrackFont.Name = 'Tahoma'
-      HotTrackFont.Style = []
-      Properties.NoneColorCaption = 'No Color'
-      Properties.DefaultColorCaption = 'Automatic'
-      Properties.CustomColorCaption = 'Other Colors...'
-      Properties.NoneColorHint = 'No Color'
-      Properties.DefaultColorHint = 'Automatic'
-      Properties.CustomColorHint = 'Other Colors...'
-      Properties.NoneColorFont.Charset = DEFAULT_CHARSET
-      Properties.NoneColorFont.Color = clWindowText
-      Properties.NoneColorFont.Height = -11
-      Properties.NoneColorFont.Name = 'Tahoma'
-      Properties.NoneColorFont.Style = []
-      Properties.DefaultColorFont.Charset = DEFAULT_CHARSET
-      Properties.DefaultColorFont.Color = clWindowText
-      Properties.DefaultColorFont.Height = -11
-      Properties.DefaultColorFont.Name = 'Tahoma'
-      Properties.DefaultColorFont.Style = []
-      Properties.CustomColorFont.Charset = DEFAULT_CHARSET
-      Properties.CustomColorFont.Color = clWindowText
-      Properties.CustomColorFont.Height = -11
-      Properties.CustomColorFont.Name = 'Tahoma'
-      Properties.CustomColorFont.Style = []
-      Properties.FloatWindowCaption = 'Color Window'
-      Properties.DragBarHint = 'Drag to float'
-      OnColorChange = JvOfficeColorButton2ColorChange
     end
   end
   object IB_SearchBar1: TIB_SearchBar

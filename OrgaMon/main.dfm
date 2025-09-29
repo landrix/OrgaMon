@@ -13,12 +13,9 @@ object FormMain: TFormMain
   Font.Name = 'Verdana'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   Position = poDefault
   OnActivate = FormActivate
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  TextHeight = 13
   object Label1: TLabel
     Left = 7
     Top = 526
@@ -1421,15 +1418,5 @@ object FormMain: TFormMain
     OnlyWhenIdle = False
     Left = 96
     Top = 24
-  end
-  object JvAppIniFileStorage1: TJvAppIniFileStorage
-    StorageOptions.BooleanStringTrueValues = 'TRUE, YES, Y'
-    StorageOptions.BooleanStringFalseValues = 'FALSE, NO, N'
-    AutoFlush = True
-    AutoReload = True
-    Location = flCustom
-    SubStorages = <>
-    Left = 184
-    Top = 16
   end
 end
