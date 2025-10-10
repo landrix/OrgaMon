@@ -401,7 +401,7 @@ function e_r_LohnKalkulation(Betrag: double; Datum: TAnfixDate): string;
 function e_r_LohnFName(RID: integer): string;
 
 // Textermittlungs Funktionen zu Personen
-procedure e_r_Anschrift(PERSON_R: integer; Datensammler: TStringList; Prefix: string = '');
+procedure e_r_Anschrift(PERSON_R: integer; Datensammler: TStringList; Prefix: string = ''; UseAlternateEmail: Boolean = False);
 procedure e_r_Bank(PERSON_R: integer; sl: TStringList; Prefix: string = '');
 function e_r_Adressat(PERSON_R: integer): TStringList;
 
@@ -2623,12 +2623,13 @@ begin
   cPERSON.free;
 end;
 
-procedure e_r_Anschrift(PERSON_R: integer; Datensammler: TStringList; Prefix: string = '');
+procedure e_r_Anschrift(PERSON_R: integer; Datensammler: TStringList; Prefix: string = ''; UseAlternateEmail: Boolean = False);
 var
   PERSON, ANSCHRIFT: TdboCursor;
   Adressat: TStringList;
   Ort: TStringList;
   n : integer;
+  chosenEmail: string;
 begin
   PERSON := nCursor;
   ANSCHRIFT := nCursor;
@@ -2651,7 +2652,13 @@ begin
       Datensammler.add(Prefix + 'Fax=' + e_r_fax(PERSON));
       Datensammler.add(Prefix + 'Telefon=' + e_r_telefon(PERSON));
       Datensammler.add(Prefix + 'Handy=' + PERSON.FieldByName('HANDY').AsString);
-      Datensammler.add(Prefix + 'eMail=' + PERSON.FieldByName('USER_ID').AsString);
+      //seltsamer Entwurf, USER_ID bekommt den Wert von EMAIL in Person.pas
+      //TFormPerson.IB_Query1BeforePost
+      chosenEmail := PERSON.FieldByName('USER_ID').AsString;
+      if UseAlternateEmail then
+      if Trim(PERSON.FieldByName('EMAIL_2').AsString) <> '' then
+        chosenEmail := PERSON.FieldByName('EMAIL_2').AsString;
+      Datensammler.add(Prefix + 'eMail=' + chosenEmail);
       Datensammler.add(Prefix + 'Versicherungsnummer=' + PERSON.FieldByName('VERSICHERUNGSNUMMER').AsString);
 
       ANSCHRIFT.sql.add('select * from ANSCHRIFT where RID=' + PERSON.FieldByName('PRIV_ANSCHRIFT_R').AsString);
@@ -8301,7 +8308,7 @@ begin
     e_r_Anschrift(PERSON_R, DatensammlerGlobal);
     e_r_Anschrift(AUFTRAGGEBER_R, DatensammlerGlobal, 'Auftraggeber.');
     e_r_Anschrift(LIEFERANSCHRIFT_R, DatensammlerGlobal, 'Lieferanschrift.');
-    e_r_Anschrift(RECHNUNGSANSCHRIFT_R, DatensammlerGlobal, 'Rechnungsanschrift.');
+    e_r_Anschrift(RECHNUNGSANSCHRIFT_R, DatensammlerGlobal, 'Rechnungsanschrift.',true);
 
     with cANSCHRIFT do
     begin

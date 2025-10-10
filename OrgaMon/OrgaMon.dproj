@@ -87,12 +87,12 @@
         <BRCC_IncludePath>..\ccr-exif;..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;..\ccr-exif;..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;$(BRCC_IncludePath)</BRCC_IncludePath>
         <DCC_UnitSearchPath>..\ccr-exif;..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_MajorVer>1</VerInfo_MajorVer>
-        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <Icon_MainIcon>Rohstoffe\7\logo\OrgaMon.ico</Icon_MainIcon>
         <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
         <DCC_UsePackage>ibo5vrt_d12_x;ibo5crt_d12_x;ibo5art_d12_x;ibo5trt_d12_x;ibo5frt_d12_x;$(DCC_UsePackage)</DCC_UsePackage>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
@@ -150,7 +150,7 @@
         <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
         <DCC_OutputDRCFile>True</DCC_OutputDRCFile>
         <DCC_StackSize>1048576,5242880</DCC_StackSize>
-        <DCC_DcuOutput>..\..\dcu</DCC_DcuOutput>
+        <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
         <DCC_ObjOutput>..\..\dcu</DCC_ObjOutput>
         <DCC_HppOutput>..\..\dcu</DCC_HppOutput>
         <DCC_UnitSearchPath>..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
