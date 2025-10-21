@@ -257,11 +257,10 @@ type
     sHotKeys: TStringList;
 {$ifndef FPC}
     SysHotKey1: TSysHotKEy;
-    JvAppIniFileStorage1: TJvAppIniFileStorage;
 {$endif}
     procedure HotKey(Sender: TObject; Index: integer);
   public
-    { Public-Deklarationen }
+    JvAppIniFileStorage1: TJvAppIniFileStorage;
     procedure UpdateBenutzer(Sender: TObject);
     procedure IBO_GridResize(Sender: TObject);
     procedure DoUpdate;

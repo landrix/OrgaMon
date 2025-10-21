@@ -72,7 +72,7 @@
         <VerInfo_Keys>CompanyName=Andreas Filsinger;FileDescription=OrgaMon Unternehmenssoftware;FileVersion=7.2.0.1350;InternalName=OrgaMon;LegalCopyright=GPLv3;LegalTrademarks=;OriginalFilename=OrgaMon.exe;ProductName=OrgaMon;ProductVersion=7.0</VerInfo_Keys>
         <VerInfo_Build>1350</VerInfo_Build>
         <VerInfo_Locale>1031</VerInfo_Locale>
-        <DCC_UnitSearchPath>..\dcpcrypt\Hashes;..\dcpcrypt\Ciphers;..\dcpcrypt;..\Synedit-2.0.7\Source;..\jcl\lib\d37\win32;..\jcl\source\include;..\ibo5_12_5_3125\source\core;..\ibo5_12_5_3125\source\common;..\ibo5_12_5_3125\source\access;..\ibo5_12_5_3125\source\tools;..\ibo5_12_5_3125\source\visual;..\ibo5_12_5_3125\source\admin;..\jvcl\run;..\jvcl\common;..\ibo5_12_5_3125\source\forms;..\ibo5_12_5_3125\source\visual\delphi;..\CPort;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>..\dcpcrypt\Hashes;..\dcpcrypt\Ciphers;..\dcpcrypt;..\Synedit-2.0.7\Source;..\jcl\lib\d37\win32;..\jcl\source\include;..\jvcl\run;..\jvcl\common;..\ibo5_12_5_3125\source\forms;..\ibo5_12_5_3125\source\visual\delphi;..\CPort;..\ccr-exif;..\ibo5_12_5_3125\lib\d13_x\Win32\Release;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_UsePackage>vclx;vcl;vclimg;dbrtl;Rave77VCL;bdertl;rtl;vclactnband;vcldb;vcldbx;vcltouch;xmlrtl;dsnap;dsnapcon;TeeUI;TeeDB;Tee;vclib;ibxpress;adortl;IndyCore;IndySystem;IndyProtocols;inet;intrawebdb_100_140;Intraweb_100_140;VclSmp;vclie;inetdb;webdsnap;websnap;inetdbbde;inetdbxpress;soaprtl;vclribbon;DbxCommonDriver;DbxClientDriver;DBXInterBaseDriver;DBXMySQLDriver;dbexpress;dbxcds;Jcl;IBO40CRT_D2010;IBO40ART_D2010;IBO40TRT_D2010;IBO40VRT_D2010;IBO40FRT_D2010;IBO40XRT_D2010;IBO40WRT_D2010;IBO40WXDT_D2010;IBO40WXRT_D2010;IBO40WSRT_D2010;IBO40RPL_D2010;IBO40FTS_D2010;JclVcl;JvCoreD14R;JvSystemD14R;JvStdCtrlsD14R;JvAppFrmD14R;JvBandsD14R;JvDBD14R;JvDlgsD14R;JvBDED14R;JvCmpD14R;JvCryptD14R;JvCtrlsD14R;JvCustomD14R;JvDockingD14R;JvDotNetCtrlsD14R;JvEDID14R;JvGlobusD14R;JvHMID14R;JvInterpreterD14R;JvJansD14R;JvManagedThreadsD14R;JvMMD14R;JvNetD14R;JvPageCompsD14R;JvPluginD14R;JvPrintPreviewD14R;JvRuntimeDesignD14R;JvTimeFrameworkD14R;JvValidatorsD14R;JvWizardD14R;JvXPCtrlsD14R;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_DependencyCheckOutputName>OrgaMon.exe</DCC_DependencyCheckOutputName>
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
@@ -85,7 +85,6 @@
         <VerInfo_MinorVer>0</VerInfo_MinorVer>
         <VerInfo_Build>0</VerInfo_Build>
         <BRCC_IncludePath>..\ccr-exif;..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;..\ccr-exif;..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;$(BRCC_IncludePath)</BRCC_IncludePath>
-        <DCC_UnitSearchPath>..\ccr-exif;..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <VerInfo_MajorVer>1</VerInfo_MajorVer>
         <Icon_MainIcon>Rohstoffe\7\logo\OrgaMon.ico</Icon_MainIcon>
         <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
@@ -114,14 +113,14 @@
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_OutputDRCFile>True</DCC_OutputDRCFile>
         <DCC_StackSize>1048576,5242880</DCC_StackSize>
-        <DCC_DcuOutput>.\dcu</DCC_DcuOutput>
+        <DCC_DcuOutput>..\dcu\Release</DCC_DcuOutput>
         <DCC_ObjOutput>.\dcu</DCC_ObjOutput>
         <DCC_HppOutput>.\dcu</DCC_HppOutput>
-        <DCC_UnitSearchPath>O:\DCPcrypt;O:\DCPcrypt\Ciphers;O:\DCPcrypt\hashes;O:\IBObjects;O:\VCLzip;O:\php4delphi;O:\tms;O:\FlexCel\FlexCel;O:\FlexCel\XLSAdapter;O:\SynEdit\Source;O:\SysHot;O:\XMLRPC;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_ResourcePath>O:\DCPcrypt;O:\DCPcrypt\Ciphers;O:\DCPcrypt\hashes;O:\IBObjects;O:\VCLzip;O:\php4delphi;O:\tms;O:\FlexCel\FlexCel;O:\FlexCel\XLSAdapter;O:\SynEdit\Source;O:\SysHot;O:\XMLRPC;$(DCC_ResourcePath)</DCC_ResourcePath>
         <DCC_ObjPath>O:\DCPcrypt;O:\DCPcrypt\Ciphers;O:\DCPcrypt\hashes;O:\IBObjects;O:\VCLzip;O:\php4delphi;O:\tms;O:\FlexCel\FlexCel;O:\FlexCel\XLSAdapter;O:\SynEdit\Source;O:\SysHot;O:\XMLRPC;$(DCC_ObjPath)</DCC_ObjPath>
         <DCC_IncludePath>O:\DCPcrypt;O:\DCPcrypt\Ciphers;O:\DCPcrypt\hashes;O:\IBObjects;O:\VCLzip;O:\php4delphi;O:\tms;O:\FlexCel\FlexCel;O:\FlexCel\XLSAdapter;O:\SynEdit\Source;O:\SysHot;O:\XMLRPC;$(DCC_IncludePath)</DCC_IncludePath>
         <DCC_Define>HeBuAdmin;RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_ExeOutput>C:\Program Files (x86)\OrgaMon</DCC_ExeOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <BT_BuildType>Debug</BT_BuildType>
@@ -150,10 +149,9 @@
         <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
         <DCC_OutputDRCFile>True</DCC_OutputDRCFile>
         <DCC_StackSize>1048576,5242880</DCC_StackSize>
-        <DCC_DcuOutput>..\dcu</DCC_DcuOutput>
+        <DCC_DcuOutput>..\dcu\Debug</DCC_DcuOutput>
         <DCC_ObjOutput>..\..\dcu</DCC_ObjOutput>
         <DCC_HppOutput>..\..\dcu</DCC_HppOutput>
-        <DCC_UnitSearchPath>..\XMLRPC;..\libxml2;..\CCR Exif;..\UIB;..\fpSpreadSheet;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_ResourcePath>..\DCPcrypt;..\DCPcrypt\Ciphers;..\DCPcrypt\hashes;..\XMLRPC;..\ZipMaster;..\libxml2;$(DCC_ResourcePath)</DCC_ResourcePath>
         <DCC_ObjPath>..\DCPcrypt;..\DCPcrypt\Ciphers;..\DCPcrypt\hashes;..\XMLRPC;..\ZipMaster;..\libxml2;$(DCC_ObjPath)</DCC_ObjPath>
         <DCC_IncludePath>..\DCPcrypt;..\DCPcrypt\Ciphers;..\DCPcrypt\hashes;..\XMLRPC;..\ZipMaster;..\libxml2;$(DCC_IncludePath)</DCC_IncludePath>
@@ -212,8 +210,8 @@
                     <VersionInfoKeys Name="ProductVersion">7</VersionInfoKeys>
                 </VersionInfoKeys>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k290.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
-                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp290.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k370.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp370.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
                 </Excluded_Packages>
                 <Source>
                     <Source Name="MainSource">OrgaMon.dpr</Source>

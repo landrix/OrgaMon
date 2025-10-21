@@ -55,7 +55,7 @@ uses
 
   // HeBu Projekt
   Buttons, ComCtrls,
-  JvGIF, JvComponentBase, JvFormPlacement;
+  JvGIF, JvComponentBase, JvFormPlacement, JvJvclUtils;
 
 type
   TFormBelege = class(TForm)
@@ -139,7 +139,6 @@ type
     IB_Memo3: TIB_Memo;
     SpeedButton23: TSpeedButton;
     SpeedButton24: TSpeedButton;
-    JvFormStorage1: TJvFormStorage;
     IB_Edit1: TIB_Edit;
     Label4: TLabel;
     SpeedButton1: TSpeedButton;
@@ -276,7 +275,7 @@ type
     procedure SpeedButton27Click(Sender: TObject);
     procedure SpeedButton25Click(Sender: TObject);
   private
-
+    JvFormStorage1: TJvFormStorage;
     { Private-Deklarationen }
     PERSON_R: Integer;
     ARTIKEL_AA_R: Integer;
@@ -1461,6 +1460,11 @@ begin
     // ClientHeight := pred(ClientHeight div DefaultRowHeight) * DefaultRowHeight;
     RowCount := 0;
   end;
+
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
 
   //
   Query1_SQL := TStringList.create;

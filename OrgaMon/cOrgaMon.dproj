@@ -51,25 +51,25 @@
         <SanitizedProjectName>cOrgaMon</SanitizedProjectName>
         <Icns_MainIcns>$(BDS)\bin\delphi_PROJECTICNS.icns</Icns_MainIcns>
         <DCC_UsePackage>fmx;IndySystem;DBXInterBaseDriver;DbxCommonDriver;dbxcds;dsnap;IndyCore;fmxase;CloudService;inetdbxpress;bindcompfmx;rtl;dbrtl;DbxClientDriver;bindcomp;inetdb;xmlrtl;ibxpress;IndyProtocols;DBXMySQLDriver;bindengine;soaprtl;inet;fmxobj;fmxdae;dbexpress;$(DCC_UsePackage)</DCC_UsePackage>
-        <DCC_UnitSearchPath>..\DCPcrypt;..\DCPcrypt\Ciphers;..\DCPcrypt\Hashes;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_UnitSearchPath>..\DCPcrypt;..\DCPcrypt\Ciphers;..\DCPcrypt\Hashes;..\ibo5_12_5_3125\lib\d13_x\Win32\Release;..\jcl\source\include;..\jcl\lib\d37\win32;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
-        <DCC_DcuOutput>..\..\dcu-console</DCC_DcuOutput>
-        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
         <DCC_E>false</DCC_E>
         <DCC_N>false</DCC_N>
         <DCC_S>false</DCC_S>
         <DCC_F>false</DCC_F>
         <DCC_K>false</DCC_K>
+        <VerInfo_Locale>1031</VerInfo_Locale>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+        <VerInfo_Keys>CompanyName=;FileVersion=8.2.0.45;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=8.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <Manifest_File>None</Manifest_File>
-        <DCC_ExeOutput>$(ProgramFiles)\OrgaMon\</DCC_ExeOutput>
         <DCC_UsePackage>JvGlobus;JvMM;JvManagedThreads;ibo5art_d2012;ibo5wsrt_d2012;JvDlgs;TeeDB;FlexCelXE2;JvCrypt;Rave100VCL;vclib;inetdbbde;JvNet;JvDotNetCtrls;vclimg;fmi;ibo5vrt_d2012;JvXPCtrls;vcldb;vcldsnap;ibo5trt_d2012;Intraweb_120_160;ibo5wxrt_d2012;JvCore;vclribbon;frxe16;vcl;CodeSiteExpressPkg;FmxTeeUI;JvAppFrm;JvDB;JvRuntimeDesign;webdsnap;ibo5crt_d2012;JclDeveloperTools;JvDocking;adortl;JvWizards;SynEdit_R2009;JvHMI;ibo5xrt_d2012;vcldbx;JvBands;frx16;ibo5frt_d2012;JvPluginSystem;Tee;ibo5admrt_d2012;JclContainers;JvCmp;JvSystem;svnui;CPortLibD2010;JvControls;JvTimeFramework;frxDB16;intrawebdb_120_160;fs16;FMXTee;TeeUI;vclactnband;JvJans;bindcompvcl;JvStdCtrls;JvCustom;Jcl;vclie;JvPageComps;JvPrintPreview;ibo5ftsrt_d2012;vcltouch;websnap;VclSmp;fsDB16;ibo5rplrt_d2012;ibo5wrt_d2012;dsnapcon;JclVcl;JvPascalInterpreter;vclx;svn;bdertl;JvBDE;$(DCC_UsePackage)</DCC_UsePackage>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;$(DCC_Namespace)</DCC_Namespace>
@@ -83,6 +83,8 @@
         <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
         <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
+        <DCC_ExeOutput>C:\Program Files (x86)\OrgaMon</DCC_ExeOutput>
+        <DCC_DcuOutput>..\dcu\Debug</DCC_DcuOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
@@ -95,34 +97,34 @@
         <VerInfo_Build>45</VerInfo_Build>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
-        <VerInfo_Keys>CompanyName=;FileVersion=8.2.0.45;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=8.0.0.0;Comments=;ProgramID=com.embarcadero.$(ModuleName);FileDescription=$(ModuleName);ProductName=$(ModuleName)</VerInfo_Keys>
         <DCC_StrictVarStrings>false</DCC_StrictVarStrings>
-        <DCC_ExeOutput>$(ProgramFiles)\OrgaMon\</DCC_ExeOutput>
         <DCC_WriteableConstants>true</DCC_WriteableConstants>
-        <DCC_DcuOutput>..\..\dcu-console</DCC_DcuOutput>
         <DCC_UnitAlias>pngimage=vcl.graphics.pngimage;JPEG=Vcl.Imaging.JPEG;$(DCC_UnitAlias)</DCC_UnitAlias>
         <VerInfo_Locale>1033</VerInfo_Locale>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
         <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
         <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
         <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_ExeOutput>C:\Program Files (x86)\OrgaMon</DCC_ExeOutput>
+        <DCC_DcuOutput>..\dcu\Release</DCC_DcuOutput>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
         <DCC_MaxStackSize>2097152</DCC_MaxStackSize>
         <DCC_MinStackSize>65536</DCC_MinStackSize>
         <DCC_StrictVarStrings>false</DCC_StrictVarStrings>
-        <DCC_DcuOutput>..\..\dcu-console-release</DCC_DcuOutput>
         <DCC_IOChecking>false</DCC_IOChecking>
         <Icon_MainIcon>cOrgaMon_Icon.ico</Icon_MainIcon>
         <Debugger_RunParams>--test=Rechnung.html</Debugger_RunParams>
-        <DCC_ExeOutput>$(ProgramFiles)\OrgaMon\</DCC_ExeOutput>
         <DCC_WriteableConstants>true</DCC_WriteableConstants>
+        <VerInfo_Keys>CompanyName=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName);FileDescription=$(MSBuildProjectName);ProductName=$(MSBuildProjectName)</VerInfo_Keys>
         <DCC_UnitAlias>pngimage=vcl.graphics.pngimage;JPEG=Vcl.Imaging.JPEG;$(DCC_UnitAlias)</DCC_UnitAlias>
         <VerInfo_Locale>1033</VerInfo_Locale>
+        <AppDPIAwarenessMode>none</AppDPIAwarenessMode>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -230,17 +232,8 @@
                     <Source Name="MainSource">cOrgaMon.dpr</Source>
                 </Source>
                 <Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FlexCel_Core240.bpl">FlexCel Core Library</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\VCL_FlexCel_Core240.bpl">FlexCel Core Library for VCL</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FlexCel_XlsAdapter240.bpl">FlexCel Xls/x Engine</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FlexCel_Pdf240.bpl">FlexCel PDF Engine</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FlexCel_Render240.bpl">FlexCel Rendering Engine</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FlexCel_Report240.bpl">FlexCel Reporting Engine</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\VCL_FlexCel_Components240.bpl">FlexCel Visual Components for VCL (Runtime)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\VCL_FlexCel_Components_DESIGN240.bpl">FlexCel Visual Components for VCL (Design)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FMX_FlexCel_Core240.bpl">FlexCel Core Library for FireMonkey</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FMX_FlexCel_Components240.bpl">FlexCel Visual Components for FireMonkey (Runtime)</Excluded_Packages>
-                    <Excluded_Packages Name="C:\Users\Andreas\Documents\TMSSoftware\FlexCelVCLNT\Packages\dBerlin\bpl\Win32\FMX_FlexCel_Components_DESIGN240.bpl">FlexCel Visual Components for FireMonkey (Design)</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k370.bpl">Microsoft Office 2000 Beispiele für gekapselte Komponenten für Automatisierungsserver</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp370.bpl">Microsoft Office XP Beispiele für gekapselte Komponenten für Automation Server</Excluded_Packages>
                 </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="5">

@@ -104,7 +104,7 @@ begin
     writeln(command);
     result := ReadLn(#13#10);
     {$else}
-    {$ifdef VER360} //Delphi 12
+    {$ifdef VER370} //Delphi 13
     writeln(command);
     result := ReadLn(#13#10);
     {$else}
@@ -180,7 +180,7 @@ begin
       result := IOHandler.ReadLn(#13#10);
       LastError := IOHandler.ReadLn(#13#10);
       {$else}
-      {$ifdef VER360}
+      {$ifdef VER370}
       result := IOHandler.ReadLn(#13#10);
       LastError := IOHandler.ReadLn(#13#10);
       {$else}
@@ -202,7 +202,7 @@ begin
   {$ifdef fpc}
   IOHandler.writeln('set ' + Key + ' 0 0 ' + IntToStr(length(Value)));
   {$else}
-  {$ifdef VER360}
+  {$ifdef VER370}
   IOHandler.writeln('set ' + Key + ' 0 0 ' + IntToStr(length(Value)));
   {$else}
   IOHandler.writeln('set ' + Key + ' 0 0 ' + IntToStr(length(Value)),
