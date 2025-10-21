@@ -38,6 +38,7 @@ __recovery
 *.local
 *.identcache
 *.stat
+Thumbs.db
 /OrgaMon/backup
 /Lazarus/lib/i386-win32
 /Lazarus/backup
