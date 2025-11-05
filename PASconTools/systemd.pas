@@ -68,7 +68,7 @@ uses
  fpchelper,
  {$endif}
  IdUDPClient,
- SysUtils;
+ SysUtils, StrUtils;
 
 function CallExternalApp(Cmd: string; const CmdShow: Integer): Cardinal;
 begin
@@ -120,6 +120,10 @@ var
  Dokument_pdf : string;
  k : integer;
  ErrorMsg: string;
+ hstrl : TStringList;
+ i : Integer;
+ innerBody : Boolean;
+ hstr : String;
 begin
   result := TStringList.Create;
 
@@ -156,6 +160,44 @@ begin
     begin
       ErrorMsg := 'wkhtmltopdf Installation nicht gefunden!';
       break;
+    end;
+
+    hstrl := TStringList.Create;
+    try
+      hstrl.LoadFromFile(Dokument,TEncoding.UTF8);
+      i := 0;
+      innerBody := false;
+      if hstrl.Count > 0 then
+      repeat
+        try
+          if not innerBody then
+          if Pos('<body>',LowerCase(hstrl[i]))>0 then
+          begin
+            innerBody := true;
+            continue;
+          end;
+          if not innerBody then
+            continue;
+
+          if Pos('</body>',LowerCase(hstrl[i]))>0 then
+            break;
+
+          hstr := ReplaceStr(hstrl[i],'ß','&szlig;');
+          hstr := ReplaceStr(hstr,'ä','&auml;');
+          hstr := ReplaceStr(hstr,'ö','&ouml;');
+          hstr := ReplaceStr(hstr,'ü','&uuml;');
+          hstr := ReplaceStr(hstr,'Ä','&Auml;');
+          hstr := ReplaceStr(hstr,'Ö','&Ouml;');
+          hstrl[i] := ReplaceStr(hstr,'Ü','&Uuml;');
+
+        finally
+          Inc(i);
+        end;
+      until i >= hstrl.Count-1;
+
+      hstrl.SaveToFile(Dokument,TEncoding.UTF8);
+    finally
+      hstrl.Free;
     end;
 
     Dokument_pdf := Dokument;
