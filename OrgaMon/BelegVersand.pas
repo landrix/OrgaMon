@@ -34,7 +34,7 @@ uses
   Forms, Dialogs, IB_UpdateBar,
   ExtCtrls, Grids, IB_Grid,
   IB_Components, IB_Access, StdCtrls, IB_Controls, JvComponentBase,
-  JvFormPlacement, Vcl.Buttons;
+  JvFormPlacement, JvJvclUtils,Vcl.Buttons;
 
 type
   TFormBelegVersand = class(TForm)
@@ -51,7 +51,6 @@ type
     Image2: TImage;
     Button20: TButton;
     Button2: TButton;
-    JvFormStorage1: TJvFormStorage;
     SpeedButton1: TSpeedButton;
     procedure FormActivate(Sender: TObject);
     procedure IB_Query1AfterScroll(IB_Dataset: TIB_Dataset);
@@ -65,7 +64,9 @@ type
     procedure IB_Query1BeforePrepare(Sender: TIB_Statement);
     procedure IB_Grid1GetDisplayText(Sender: TObject; ACol, ARow: Integer; var AString: string);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
+    JvFormStorage1 : TJvFormStorage;
     { Private-Deklarationen }
     Grid1_Col_Bearbeiter: Integer;
 
@@ -111,6 +112,14 @@ begin
   ComboBox2.Items.Assign(FormVersender.Versandformen);
   ComboBox2.Items.Insert(0, cRefComboOhneEintrag);
   ReflectData;
+end;
+
+procedure TFormBelegVersand.FormCreate(Sender: TObject);
+begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
 end;
 
 procedure TFormBelegVersand.SetContext(BELEG_R: Integer; TL: Integer);
@@ -354,6 +363,7 @@ begin
     end;
 
     // Ensure eMail Entry
+    //hier wird die Rechnungsmail eingetragen
     VORLAGE_R := e_r_eMailVorlage(cMailVorlage_Rechnung);
     if (VORLAGE_R < cRID_FirstValid) then
     begin

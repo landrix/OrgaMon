@@ -32,7 +32,7 @@ uses
   Windows, Messages, SysUtils,
   Variants, Classes, Graphics,
   Controls, Forms, Dialogs,
-  StdCtrls, Vcl.ExtCtrls, JvComponentBase, JvFormPlacement,
+  StdCtrls, Vcl.ExtCtrls, JvComponentBase, JvFormPlacement,JvJvclUtils,
   anfix;
 
 const
@@ -56,7 +56,6 @@ type
   TFormMonteurUmfang = class(TForm)
     Button1: TButton;
     Button2: TButton;
-    JvFormStorage1: TJvFormStorage;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     RadioButtonM1: TRadioButton;
@@ -68,7 +67,7 @@ type
     procedure Button2Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
   private
-    { Private-Deklarationen }
+    JvFormStorage1 : TJvFormStorage;
   public
     { Public-Deklarationen }
     ExecuteResult: integer; { -1=Abbruch
@@ -84,6 +83,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses main;
 
 procedure TFormMonteurUmfang.Button1Click(Sender: TObject);
 begin
@@ -111,6 +112,10 @@ end;
 
 procedure TFormMonteurUmfang.FormCreate(Sender: TObject);
 begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
   ExecuteResult := -1;
 end;
 

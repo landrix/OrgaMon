@@ -40,8 +40,7 @@ uses
   StdCtrls, ExtCtrls, Buttons,
   GeoCache, FastGeo, OpenStreetMap,
 
- JvComponentBase,
-  JvFormPlacement,
+ JvComponentBase, JvFormPlacement, JvJvclUtils,
 
 
   // Andere Formulare
@@ -67,7 +66,6 @@ type
     ComboBox2: TComboBox;
     IdCookieManager1: TIdCookieManager;
     PaintBox1: TPaintBox;
-    JvFormStorage1: TJvFormStorage;
     procedure FormCreate(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure SpeedButton4Click(Sender: TObject);
@@ -91,6 +89,7 @@ type
     procedure IdCookieManager1NewCookie(ASender: TObject; ACookie: TIdCookie;
       var VAccept: Boolean);
   private
+    JvFormStorage1 : TJvFormStorage;
     { Private-Deklarationen }
     Initialized: Boolean;
     Lastx, Lasty: double;
@@ -584,6 +583,11 @@ end;
 
 procedure TFormGeoArbeitsplatz.FormCreate(Sender: TObject);
 begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
+
   top := 0;
   left := 0;
   clientheight := PaintBox1.top + 700 + dpiX(6);

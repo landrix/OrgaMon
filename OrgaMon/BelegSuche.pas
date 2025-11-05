@@ -36,7 +36,7 @@ uses
   Buttons,
 
   // Tools
-  gplists,
+  gplists,JvJvclUtils,
 
   // IBO
   IB_Access,
@@ -89,7 +89,6 @@ type
     IB_UpdateBar3: TIB_UpdateBar;
     Button9: TButton;
     Button8: TButton;
-    JvFormStorage1: TJvFormStorage;
     Splitter1: TSplitter;
     SpeedButton13: TSpeedButton;
     procedure Button1Click(Sender: TObject);
@@ -115,7 +114,9 @@ type
     procedure SpeedButton41Click(Sender: TObject);
     procedure Button18Click(Sender: TObject);
     procedure SpeedButton13Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
+    JvFormStorage1 : TJvFormStorage;
     { Private-Deklarationen }
     ItemRIDs: TgpIntegerList;
     cCOL_PAPERCOLOR: Integer;
@@ -178,6 +179,14 @@ end;
 procedure TFormBelegSuche.FormActivate(Sender: TObject);
 begin
   EnsureQueriesAreOpen;
+end;
+
+procedure TFormBelegSuche.FormCreate(Sender: TObject);
+begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
 end;
 
 var

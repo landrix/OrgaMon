@@ -37,7 +37,7 @@ uses
   Menus, WordIndex, anfix,
   DatePick, main,
   Sperre, Buttons, globals,
-  gplists, IB_Access,
+  gplists, IB_Access,JvJvclUtils,
   dbOrgaMon, JvComponentBase, JvFormPlacement, System.ImageList;
 
 type
@@ -177,7 +177,6 @@ type
     ToolButton6: TToolButton;
     IB_Query_MonteurInfoEinzeln: TIB_Query;
     MenuItem_WechselDatumSortierung: TMenuItem;
-    JvFormStorage1: TJvFormStorage;
     procedure ToolButton37Click(Sender: TObject);
     procedure DrawGrid1DrawCell(Sender: TObject; ACol, ARow: Integer; Rect: TRect; State: TGridDrawState);
     procedure FormCreate(Sender: TObject);
@@ -289,8 +288,7 @@ type
     procedure ToolButton27Click(Sender: TObject);
     procedure ToolButton29Click(Sender: TObject);
   private
-
-    { Private-Deklarationen }
+    JvFormStorage1: TJvFormStorage;
 
     // Selektions-Kriterien
     s_Baustelle: Integer;
@@ -841,6 +839,10 @@ procedure TFormAuftragArbeitsplatz.FormCreate(Sender: TObject);
 var
   n: Integer;
 begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
 
   SymbolList := TList.create;
   PhasenStatus := TStringlist.create;

@@ -10,7 +10,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
   Font.Name = 'Verdana'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   OnActivate = FormActivate
   OnClose = FormClose
   OnCreate = FormCreate
@@ -18,8 +17,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
   DesignSize = (
     1018
     704)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Label1: TLabel
     Left = 205
     Top = 683
@@ -1475,7 +1472,7 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     Left = 368
     Top = 249
     Bitmap = {
-      494C010164006800540110001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010164006800040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       000000000000360000002800000040000000A0010000010020000000000000A0
       0100000000000000000000000000000000000000000000000000000000000000
       0000000000000000000000000000000000000000000000000000000000000000
@@ -5052,7 +5049,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     end
   end
   object IB_Query9: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT '
@@ -5074,7 +5070,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     Top = 160
   end
   object IB_Query2: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT * FROM'
@@ -5086,7 +5081,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     Top = 456
   end
   object IB_Query3: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT * FROM AUFTRAG'
@@ -5100,7 +5094,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     Top = 112
   end
   object IB_Query15: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT RID_AT_IMPORT,'
@@ -5113,7 +5106,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     Top = 112
   end
   object IB_Query16: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT '
@@ -5126,7 +5118,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     Top = 456
   end
   object IB_Cursor1: TIB_Cursor
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     Left = 376
     Top = 112
@@ -5138,7 +5129,6 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     Top = 496
   end
   object IB_Query_MonteurInfoEinzeln: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT * FROM AUFTRAG'
@@ -5149,13 +5139,5 @@ object FormAuftragArbeitsplatz: TFormAuftragArbeitsplatz
     BeforePost = IB_Query3BeforePost
     Left = 504
     Top = 112
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpSize, fpLocation]
-    StoredValues = <>
-    Left = 624
-    Top = 600
   end
 end

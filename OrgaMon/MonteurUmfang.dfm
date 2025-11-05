@@ -11,11 +11,8 @@ object FormMonteurUmfang: TFormMonteurUmfang
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  TextHeight = 13
   object Button1: TButton
     Left = 244
     Top = 106
@@ -91,13 +88,5 @@ object FormMonteurUmfang: TFormMonteurUmfang
       Caption = 'eine Woche'
       TabOrder = 1
     end
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpLocation]
-    StoredValues = <>
-    Left = 75
-    Top = 64
   end
 end

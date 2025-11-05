@@ -121,35 +121,36 @@ var
  k : integer;
  ErrorMsg: string;
 begin
-
+  result := TStringList.Create;
 
   repeat
+    ErrorMsg := '';
+    if not(FileExists(Dokument)) then
+    begin
+      ErrorMsg := 'Quell-HTML nicht gefunden!';
+      break;
+    end;
 
-     result := TStringList.Create;
-     ErrorMsg := '';
-     if not(FileExists(Dokument)) then
-     begin
-       ErrorMsg := 'Quell-HTML nicht gefunden!';
-       break;
-     end;
-
-     if (wkhtmltopdf_Installation='') then
-     begin
+    if (wkhtmltopdf_Installation = '') then
+    begin
 
       repeat
-       wkhtmltopdf_Installation := 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe';
-       if FileExists(wkhtmltopdf_Installation) then
-        break;
-       wkhtmltopdf_Installation := ProgramFilesDir + 'wkhtmltopdf\bin\wkhtmltopdf.exe';
-       if FileExists(wkhtmltopdf_Installation) then
-        break;
-       wkhtmltopdf_Installation := 'C:\Program Files (x86)\wkhtmltopdf\bin\wkhtmltopdf.exe';
-       if FileExists(wkhtmltopdf_Installation) then
-        break;
-       wkhtmltopdf_Installation := '';
+        wkhtmltopdf_Installation := 'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe';
+        if FileExists(wkhtmltopdf_Installation) then
+          break;
+        wkhtmltopdf_Installation := ProgramFilesDir + 'wkhtmltopdf\bin\wkhtmltopdf.exe';
+        if FileExists(wkhtmltopdf_Installation) then
+          break;
+        wkhtmltopdf_Installation := 'C:\Program Files (x86)\wkhtmltopdf\bin\wkhtmltopdf.exe';
+        if FileExists(wkhtmltopdf_Installation) then
+          break;
+        wkhtmltopdf_Installation := ExtractFilePath(ParamStr(0))+'wkhtmltopdf.exe';
+        if FileExists(wkhtmltopdf_Installation) then
+          break;
+        wkhtmltopdf_Installation := '';
       until yet;
 
-     end;
+    end;
 
     if (wkhtmltopdf_Installation='') then
     begin
@@ -207,6 +208,7 @@ begin
     end;
 
   until true;
+
   if (ErrorMsg<>'') then
    result.values['ERROR'] := ErrorMsg
   else

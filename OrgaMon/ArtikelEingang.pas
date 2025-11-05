@@ -46,7 +46,7 @@ uses
   IdUDPClient, IdSNTP,
 
   // Jedi
-  JvFormPlacement, JvAppStorage, JvComponentBase;
+  JvFormPlacement, JvAppStorage, JvJvclUtils, JvComponentBase;
 
 type
   TFormArtikelEingang = class(TForm)
@@ -70,7 +70,6 @@ type
     SpeedButton3: TSpeedButton;
     SpeedButton4: TSpeedButton;
     Button2: TButton;
-    JvFormStorage1: TJvFormStorage;
     SpeedButton5: TSpeedButton;
     SpeedButton6: TSpeedButton;
     Button3: TButton;
@@ -100,7 +99,9 @@ type
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Edit2KeyPress(Sender: TObject; var Key: Char);
+    procedure FormCreate(Sender: TObject);
   private
+    JvFormStorage1 : TJvFormStorage;
     initialized: boolean;
     cPlanY: Integer;
     ScrollBarWidth: Integer;
@@ -941,6 +942,14 @@ begin
     dgAutoSize(DrawGrid1, true);
     initialized := true;
   end;
+end;
+
+procedure TFormArtikelEingang.FormCreate(Sender: TObject);
+begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
 end;
 
 procedure TFormArtikelEingang.FormResize(Sender: TObject);

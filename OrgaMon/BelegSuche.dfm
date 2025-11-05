@@ -10,11 +10,9 @@ object FormBelegSuche: TFormBelegSuche
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
-  PixelsPerInch = 96
-  TextHeight = 13
+  OnCreate = FormCreate
   object Splitter1: TSplitter
     Left = 0
     Top = 433
@@ -22,9 +20,6 @@ object FormBelegSuche: TFormBelegSuche
     Height = 3
     Cursor = crVSplit
     Align = alTop
-    ExplicitLeft = 1
-    ExplicitTop = 1
-    ExplicitWidth = 67
   end
   object Panel1: TPanel
     Left = 0
@@ -312,6 +307,7 @@ object FormBelegSuche: TFormBelegSuche
       DataSource = IB_DataSource1
       Align = alBottom
       Anchors = [akLeft, akTop, akRight, akBottom]
+      ParentBackground = False
       TabOrder = 0
       ListBoxStyle = True
       OnGetCellProps = IB_Grid1GetCellProps
@@ -323,6 +319,7 @@ object FormBelegSuche: TFormBelegSuche
       Height = 5
       DataField = 'KUNDEN_INFO'
       DataSource = IB_DataSource1
+      ParentBackground = False
       TabOrder = 1
       AutoSize = False
     end
@@ -486,6 +483,7 @@ object FormBelegSuche: TFormBelegSuche
       DataSource = IB_DataSource3
       Align = alBottom
       Anchors = [akLeft, akTop, akRight, akBottom]
+      ParentBackground = False
       TabOrder = 0
     end
     object Button2: TButton
@@ -563,7 +561,6 @@ object FormBelegSuche: TFormBelegSuche
       'MAHNUNG_AUSGESETZT=BOOLEAN=Y,N'
       'TERMIN=NOTIME'
       'ZUSAGE=NOTIME')
-    DatabaseName = '192.168.115.1:test.fdb'
     FieldsDisplayFormat.Strings = (
       'ZUSAGE=dd.mm.yy'
       'DRUCK=dd.mm.yy'
@@ -767,7 +764,6 @@ object FormBelegSuche: TFormBelegSuche
     Top = 88
   end
   object IB_Query2: TIB_Query
-    DatabaseName = '192.168.115.1:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT *'
@@ -789,7 +785,6 @@ object FormBelegSuche: TFormBelegSuche
     Top = 134
   end
   object IB_Query4: TIB_Query
-    DatabaseName = '192.168.115.1:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT *'
@@ -801,7 +796,6 @@ object FormBelegSuche: TFormBelegSuche
   object IB_Query3: TIB_Query
     ColumnAttributes.Strings = (
       'NETTO=BOOLEAN=Y,N')
-    DatabaseName = '192.168.115.1:test.fdb'
     FieldsDisplayLabel.Strings = (
       'MENGE_RECHNUNG=REC'
       'MENGE_BESTELLT=BES'
@@ -869,7 +863,6 @@ object FormBelegSuche: TFormBelegSuche
     Top = 551
   end
   object IB_Query5: TIB_Query
-    DatabaseName = '192.168.115.1:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT * FROM '
@@ -882,12 +875,5 @@ object FormBelegSuche: TFormBelegSuche
     Filter = 'Semikolon seperierte Textdatei (*.csv)|*.csv'
     Left = 120
     Top = 607
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    StoredValues = <>
-    Left = 112
-    Top = 208
   end
 end

@@ -10,13 +10,11 @@ object FormBelegVersand: TFormBelegVersand
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   OnActivate = FormActivate
+  OnCreate = FormCreate
   DesignSize = (
     580
     300)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Label1: TLabel
     Left = 7
     Top = 243
@@ -172,7 +170,6 @@ object FormBelegVersand: TFormBelegVersand
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000}
     OnClick = Image2Click
-    ExplicitLeft = 475
   end
   object SpeedButton1: TSpeedButton
     Left = 447
@@ -219,6 +216,7 @@ object FormBelegVersand: TFormBelegVersand
     CustomGlyphsSupplied = []
     DataSource = IB_DataSource1
     Anchors = [akLeft, akTop, akRight, akBottom]
+    ParentBackground = False
     TabOrder = 0
     OnGetDisplayText = IB_Grid1GetDisplayText
   end
@@ -305,7 +303,6 @@ object FormBelegVersand: TFormBelegVersand
   object IB_Query1: TIB_Query
     ColumnAttributes.Strings = (
       'RID=NOTREQUIRED')
-    DatabaseName = '192.168.115.6:test.fdb'
     FieldsDisplayLabel.Strings = (
       'BELEG_R=B#'
       'TEILLIEFERUNG=TL'
@@ -365,13 +362,5 @@ object FormBelegVersand: TFormBelegVersand
     Dataset = IB_Query1
     Left = 88
     Top = 72
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpSize, fpLocation]
-    StoredValues = <>
-    Left = 392
-    Top = 240
   end
 end

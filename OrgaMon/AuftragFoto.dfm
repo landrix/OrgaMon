@@ -11,13 +11,11 @@ object FormAuftragFoto: TFormAuftragFoto
   Font.Name = 'Tahoma'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
+  OnCreate = FormCreate
   OnKeyDown = FormKeyDown
   DesignSize = (
     678
     586)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Image1: TImage
     Left = 8
     Top = 73
@@ -210,13 +208,5 @@ object FormAuftragFoto: TFormAuftragFoto
     ShowHint = True
     OnClick = SpeedButton1Click
     OnDblClick = SpeedButton1DblClick
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpSize, fpLocation]
-    StoredValues = <>
-    Left = 576
-    Top = 38
   end
 end

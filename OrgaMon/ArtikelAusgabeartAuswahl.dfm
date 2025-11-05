@@ -10,13 +10,11 @@ object FormArtikelAusgabeartAuswahl: TFormArtikelAusgabeartAuswahl
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
   OnActivate = FormActivate
+  OnCreate = FormCreate
   DesignSize = (
     276
     511)
-  PixelsPerInch = 96
-  TextHeight = 13
   object SpeedButton27: TSpeedButton
     Left = -1
     Top = 491
@@ -80,13 +78,5 @@ object FormArtikelAusgabeartAuswahl: TFormArtikelAusgabeartAuswahl
     TabOrder = 1
     OnDblClick = ListBox1DblClick
     OnKeyPress = ListBox1KeyPress
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpSize, fpLocation]
-    StoredValues = <>
-    Left = 184
-    Top = 40
   end
 end

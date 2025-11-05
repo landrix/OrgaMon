@@ -73,6 +73,8 @@ lib
 /FirebirdRestore/*.dcu
 /FirebirdRestore/*.exe
 /Oc/*.exe
+/wkhtmltox
+/CargoBay
 
 _Install
 SynEdit-20025.08.24

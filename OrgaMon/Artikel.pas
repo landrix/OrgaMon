@@ -53,7 +53,7 @@ uses
   // Tools
   WordIndex,
   JvGIF,
-  FlexCel.Core, FlexCel.xlsadapter,
+  FlexCel.Core, FlexCel.xlsadapter, JvJvclUtils,
   dbOrgaMon,
 
   // Hebu-Project
@@ -207,7 +207,6 @@ type
     TabSheet8: TTabSheet;
     Edit4: TEdit;
     SpeedButton21: TSpeedButton;
-    JvFormStorage1: TJvFormStorage;
     SpeedButton27: TSpeedButton;
     Button4: TButton;
     Button21: TButton;
@@ -289,6 +288,7 @@ type
     procedure SpeedButton25Click(Sender: TObject);
     procedure SpeedButton23Click(Sender: TObject);
   private
+    JvFormStorage1 : TJvFormStorage;
     { Private-Deklarationen }
     _VERLAG_R: Integer;
     Query1_Sql: TStringList;
@@ -871,6 +871,11 @@ end;
 
 procedure TFormArtikel.FormCreate(Sender: TObject);
 begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
+
   StartDebug('Artikel');
   PageControl1.ActivePage := TabSheet3;
   Query1_Sql := TStringList.create;

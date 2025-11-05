@@ -41,7 +41,7 @@ uses
   IB_Components, IB_Access, IB_Grid,
 
   // Jedi
-  JvGIF, JvExControls, JvArrayButton,
+  JvGIF, JvExControls, JvArrayButton,JvJvclUtils,
   JvAnimatedImage, JvGIFCtrl,
   JvComponentBase, JvFormPlacement,
 
@@ -93,7 +93,6 @@ type
     Label36: TLabel;
     Label37: TLabel;
     Label38: TLabel;
-    JvGIFAnimator2: TJvGIFAnimator;
     SpeedButton41: TSpeedButton;
     Label1: TLabel;
     Image1: TImage;
@@ -175,7 +174,6 @@ type
     SpeedButton18: TSpeedButton;
     SpeedButton19: TSpeedButton;
     SpeedButton20: TSpeedButton;
-    JvArrayButton1: TJvArrayButton;
     SpeedButton22: TSpeedButton;
     SpeedButton23: TSpeedButton;
     SpeedButton24: TSpeedButton;
@@ -233,7 +231,6 @@ type
     Edit6: TEdit;
     Button23: TButton;
     ComboBox3: TComboBox;
-    JvFormStorage1: TJvFormStorage;
     SpeedButton49: TSpeedButton;
     SpeedButton50: TSpeedButton;
     Label27: TLabel;
@@ -353,6 +350,8 @@ type
     procedure SpeedButton53Click(Sender: TObject);
     procedure SpeedButton54Click(Sender: TObject);
   private
+    JvArrayButton1 : TJvArrayButton;
+    JvFormStorage1 : TJvFormStorage;
     { Private-Deklarationen }
     DTA_Header: DtaDataType;
     DTA_Posten: CSatzType;
@@ -3674,14 +3673,10 @@ begin
   begin
     BeginHourGlass;
     Timer1.enabled := true;
-    JvGIFAnimator2.Visible := true;
-    JvGIFAnimator2.Animate := true;
   end
   else
   begin
     Timer1.enabled := false;
-    JvGIFAnimator2.Animate := false;
-    JvGIFAnimator2.Visible := false;
     EndHourGlass;
   end;
 end;
@@ -5627,6 +5622,26 @@ end;
 
 procedure TFormBuchhalter.FormCreate(Sender: TObject);
 begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
+
+  JvArrayButton1 := TJvArrayButton.Create(self);
+  JvArrayButton1.Parent := Panel4;
+  JvArrayButton1.Left := 9;
+  JvArrayButton1.Top := 548;
+  JvArrayButton1.Width := 889;
+  JvArrayButton1.Height := 112;
+  JvArrayButton1.Margins.Left := 4;
+  JvArrayButton1.Margins.Top := 4;
+  JvArrayButton1.Margins.Right := 4;
+  JvArrayButton1.Margins.Bottom := 4;
+  JvArrayButton1.Anchors := [akLeft, akRight, akBottom];
+  JvArrayButton1.Rows := 4;
+  JvArrayButton1.Cols := 10;
+  JvArrayButton1.OnArrayButtonClicked := JvArrayButton1ArrayButtonClicked;
+
   PageControl1.ActivePage := TabSheet4;
   iColor_Rosa := HTMLColor2TColor(cColor_Rosa);
   iColor_Gruen := HTMLColor2TColor(cColor_Gruen);

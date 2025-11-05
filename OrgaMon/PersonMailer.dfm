@@ -10,13 +10,13 @@ object FormPersonMailer: TFormPersonMailer
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
   OnClose = FormClose
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  TextHeight = 13
+  DesignSize = (
+    839
+    586)
   object Label1: TLabel
     Left = 8
     Top = 6
@@ -251,6 +251,7 @@ object FormPersonMailer: TFormPersonMailer
     Top = 539
     Width = 9
     Height = 13
+    Anchors = [akLeft, akBottom]
     Caption = '#'
   end
   object SpeedButton2: TSpeedButton
@@ -441,6 +442,8 @@ object FormPersonMailer: TFormPersonMailer
     Height = 194
     CustomGlyphsSupplied = []
     DataSource = IB_DataSource1
+    Anchors = [akLeft, akTop, akRight, akBottom]
+    ParentBackground = False
     TabOrder = 0
     DrawCellTextOptions = [gdtShowTextBlob]
   end
@@ -499,6 +502,7 @@ object FormPersonMailer: TFormPersonMailer
     Top = 558
     Width = 751
     Height = 18
+    Anchors = [akLeft, akRight, akBottom]
     TabOrder = 5
   end
   object Button8: TButton
@@ -506,6 +510,7 @@ object FormPersonMailer: TFormPersonMailer
     Top = 558
     Width = 65
     Height = 18
+    Anchors = [akRight, akBottom]
     Caption = 'Ab&bruch'
     TabOrder = 6
     OnClick = Button8Click
@@ -515,6 +520,7 @@ object FormPersonMailer: TFormPersonMailer
     Top = 521
     Width = 182
     Height = 17
+    Anchors = [akLeft, akBottom]
     Caption = 'initialisiere ...'
     TabOrder = 7
     OnClick = CheckBox1Click
@@ -546,6 +552,7 @@ object FormPersonMailer: TFormPersonMailer
     Margins.Top = 2
     Margins.Right = 2
     Margins.Bottom = 2
+    Anchors = [akLeft, akBottom]
     BevelEdges = []
     BevelOuter = bvNone
     Color = clRed
@@ -563,7 +570,8 @@ object FormPersonMailer: TFormPersonMailer
     Margins.Top = 2
     Margins.Right = 2
     Margins.Bottom = 2
-    ActivePage = TabSheet4
+    ActivePage = TabSheet1
+    Anchors = [akLeft, akRight, akBottom]
     TabOrder = 10
     object TabSheet1: TTabSheet
       Margins.Left = 2
@@ -571,10 +579,6 @@ object FormPersonMailer: TFormPersonMailer
       Margins.Right = 2
       Margins.Bottom = 2
       Caption = 'Log'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Memo1: TMemo
         Left = 0
         Top = 0
@@ -600,6 +604,7 @@ object FormPersonMailer: TFormPersonMailer
         DataField = 'NACHRICHT'
         DataSource = IB_DataSource1
         Align = alClient
+        ParentBackground = False
         TabOrder = 0
         AutoSize = False
       end
@@ -611,10 +616,6 @@ object FormPersonMailer: TFormPersonMailer
       Margins.Bottom = 2
       Caption = 'Test'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label6: TLabel
         Left = 35
         Top = 17
@@ -683,10 +684,6 @@ object FormPersonMailer: TFormPersonMailer
     object TabSheet4: TTabSheet
       Caption = 'Einstellungen'
       ImageIndex = 3
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label3: TLabel
         Left = 39
         Top = 43
@@ -747,7 +744,6 @@ object FormPersonMailer: TFormPersonMailer
   object IB_Query1: TIB_Query
     ColumnAttributes.Strings = (
       'RID=NOTREQUIRED')
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'select '

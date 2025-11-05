@@ -31,14 +31,13 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls,
-  JvComponentBase, JvFormPlacement;
+  JvComponentBase, JvFormPlacement,JvJvclUtils;
 
 type
   TFormAuftragFoto = class(TForm)
     Image1: TImage;
     Label1: TLabel;
     SpeedButton19: TSpeedButton;
-    JvFormStorage1: TJvFormStorage;
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
@@ -51,7 +50,9 @@ type
     procedure SpeedButton22Click(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton1DblClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
+    JvFormStorage1 : TJvFormStorage;
     { Private-Deklarationen }
     _Fotos: TStringList;
     ItemIndex: Integer; // -1,0..pred(_Fotos.Count)
@@ -72,6 +73,14 @@ implementation
 uses
  main, anfix, wanfix,
  clipbrd;
+
+procedure TFormAuftragFoto.FormCreate(Sender: TObject);
+begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
+end;
 
 procedure TFormAuftragFoto.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);

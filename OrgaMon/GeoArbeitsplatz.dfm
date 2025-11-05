@@ -12,7 +12,6 @@ object FormGeoArbeitsplatz: TFormGeoArbeitsplatz
   Font.Name = 'Verdana'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   OnActivate = FormActivate
   OnCreate = FormCreate
   OnDeactivate = FormDeactivate
@@ -21,8 +20,6 @@ object FormGeoArbeitsplatz: TFormGeoArbeitsplatz
   DesignSize = (
     989
     581)
-  PixelsPerInch = 96
-  TextHeight = 16
   object SpeedButton4: TSpeedButton
     Left = 4
     Top = 3
@@ -506,12 +503,5 @@ object FormGeoArbeitsplatz: TFormGeoArbeitsplatz
     OnNewCookie = IdCookieManager1NewCookie
     Left = 40
     Top = 96
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    StoredValues = <>
-    Left = 40
-    Top = 152
   end
 end

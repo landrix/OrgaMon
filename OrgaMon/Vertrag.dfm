@@ -10,13 +10,10 @@ object FormVertrag: TFormVertrag
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   OnCreate = FormCreate
   DesignSize = (
     766
     521)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Image2: TImage
     Left = 704
     Top = 6
@@ -142,7 +139,6 @@ object FormVertrag: TFormVertrag
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000}
     OnClick = Image2Click
-    ExplicitLeft = 702
   end
   object Label1: TLabel
     Left = 3
@@ -183,7 +179,6 @@ object FormVertrag: TFormVertrag
     Font.Name = 'Verdana'
     Font.Style = [fsBold]
     ParentFont = False
-    ExplicitTop = 375
   end
   object Label16: TLabel
     Left = 137
@@ -271,7 +266,6 @@ object FormVertrag: TFormVertrag
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton5Click
-    ExplicitTop = 371
   end
   object SpeedButton6: TSpeedButton
     Left = 241
@@ -426,6 +420,7 @@ object FormVertrag: TFormVertrag
     CustomGlyphsSupplied = []
     DataSource = IB_DataSource3
     Anchors = [akLeft, akTop, akRight, akBottom]
+    ParentBackground = False
     TabOrder = 0
   end
   object IB_UpdateBar1: TIB_UpdateBar
@@ -509,6 +504,7 @@ object FormVertrag: TFormVertrag
     CustomGlyphsSupplied = []
     DataSource = IB_DataSource2
     Anchors = [akLeft, akTop, akRight]
+    ParentBackground = False
     TabOrder = 6
   end
   object PageControl1: TPageControl
@@ -521,10 +517,6 @@ object FormVertrag: TFormVertrag
     TabOrder = 7
     object TabSheet1: TTabSheet
       Caption = 'Basis Optionen'
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label3: TLabel
         Left = 59
         Top = 35
@@ -650,6 +642,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'VON'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 0
         IncCellHeight = 1
         IncCellWidth = 2
@@ -662,6 +655,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'BIS'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 1
         IncCellHeight = 1
         IncCellWidth = 2
@@ -674,6 +668,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'GEBUCHT_BIS'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 2
         IncCellHeight = 1
         IncCellWidth = 2
@@ -686,6 +681,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'VORLAUF'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 3
       end
       object IB_Edit2: TIB_Edit
@@ -695,6 +691,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'WIEDERHOLUNGEN'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 4
       end
       object IB_Edit3: TIB_Edit
@@ -704,6 +701,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'ZEITSPANNE'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 5
       end
       object IB_Date4: TIB_Date
@@ -713,6 +711,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'STICHTAG'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 6
         IncCellHeight = 1
         IncCellWidth = 2
@@ -746,6 +745,7 @@ object FormVertrag: TFormVertrag
         ParentColor = False
         Ctl3D = False
         ParentCtl3D = False
+        ParentBackground = False
         TabOrder = 8
         Caption = 'Vertrag im Moment ruhend'
       end
@@ -764,6 +764,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'BEZAHLT_BIS'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 10
         IncCellHeight = 1
         IncCellWidth = 2
@@ -776,6 +777,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'VERTRAG.ANWENDUNG'
         DataSource = IB_DataSource3
+        ParentBackground = False
         TabOrder = 11
         IncCellHeight = 1
         IncCellWidth = 2
@@ -811,6 +813,7 @@ object FormVertrag: TFormVertrag
         DataField = 'EINSTELLUNGEN'
         DataSource = IB_DataSource1
         Align = alClient
+        ParentBackground = False
         TabOrder = 0
         AutoSize = False
       end
@@ -818,10 +821,6 @@ object FormVertrag: TFormVertrag
     object TabSheet3: TTabSheet
       Caption = 'Referenzen'
       ImageIndex = 2
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 0
-      ExplicitHeight = 0
       object Label13: TLabel
         Left = 94
         Top = 16
@@ -857,6 +856,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'PERSON_R'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 0
       end
       object IB_Edit5: TIB_Edit
@@ -866,6 +866,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'BAUSTELLE_R'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 1
       end
       object IB_Edit6: TIB_Edit
@@ -875,6 +876,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'BELEG_R'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 2
       end
       object IB_Edit7: TIB_Edit
@@ -884,6 +886,7 @@ object FormVertrag: TFormVertrag
         Height = 21
         DataField = 'VORGABEN_R'
         DataSource = IB_DataSource1
+        ParentBackground = False
         TabOrder = 3
       end
       object Button6: TButton
@@ -967,7 +970,6 @@ object FormVertrag: TFormVertrag
     ColumnAttributes.Strings = (
       'RID=NOTREQUIRED'
       'RUHEND=BOOLEAN=Y,N')
-    DatabaseName = '192.168.115.6:test.fdb'
     FieldsVisible.Strings = (
       'RID=FALSE')
     IB_Connection = DataModuleDatenbank.IB_Connection1
@@ -993,7 +995,6 @@ object FormVertrag: TFormVertrag
       'CROSSREF=')
   end
   object IB_Query2: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     FieldsVisible.Strings = (
       'BELEG_R=FALSE'
       'BAUSTELLE_R=FALSE')
@@ -1038,7 +1039,6 @@ object FormVertrag: TFormVertrag
     Top = 56
   end
   object IB_Query3: TIB_Query
-    DatabaseName = '192.168.115.6:test.fdb'
     FieldsVisible.Strings = (
       'PERSON_R=FALSE')
     IB_Connection = DataModuleDatenbank.IB_Connection1
@@ -1100,13 +1100,5 @@ object FormVertrag: TFormVertrag
     Dataset = IB_Query3
     Left = 112
     Top = 240
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpSize, fpLocation]
-    StoredValues = <>
-    Left = 488
-    Top = 352
   end
 end

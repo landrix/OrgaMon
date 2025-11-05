@@ -1,4 +1,3 @@
-;
 ; -- OrgaMon-RC.iss --
 ;
 
@@ -6,42 +5,50 @@
 Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 
 [Setup]
+PrivilegesRequired=Admin
 AppName=OrgaMon-RC
-AppVerName=OrgaMon 8.767 RC
-AppCopyright=Copyright (C) 1988-2022 Andreas Filsinger
-DefaultDirName={pf}\OrgaMon
+AppVerName=OrgaMon 8.768 RC
+AppCopyright=Copyright (C) 1988-2025 Andreas Filsinger
+DefaultDirName={commonpf}\OrgaMon
 DefaultGroupName=OrgaMon
 UninstallDisplayIcon={app}\OrgaMon-RC.exe
+LicenseFile=Distribution\Lizenz\gpl-3.0.txt
 DisableStartupPrompt=yes
 DisableReadyPage=yes
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 DisableReadyMemo=yes
-DisableFinishedPage=yes
-OutputDir=..\..\CargoBay
+OutputDir=..\CargoBay
 OutputBaseFilename=Setup-OrgaMon-RC
-AppVersion=8.767 RC
-VersionInfoVersion=8.767.0.0
+AppVersion=8.768 RC
+VersionInfoVersion=8.768.0.0
 Compression=zip
-WizardImageFile=compiler:WizModernImage.bmp
-WizardSmallImageFile=compiler:WizModernSmallImage.bmp
-PrivilegesRequired=none
+WizardImageFile=compiler:WizClassicImage.bmp
+WizardSmallImageFile=compiler:WizClassicSmallImage.bmp
+
 
 [Files]
 ; Anwendung
 Source: "C:\Program Files (x86)\\OrgaMon\OrgaMon.exe"; DestDir: "{app}"; DestName: "OrgaMon-RC.exe"; BeforeInstall: WaitForExit; Flags: ignoreversion restartreplace
+Source: "Distribution\Lizenz\gpl-3.0.txt"; DestDir: "{app}"; DestName: "Lizenz.txt"; Flags: onlyifdoesntexist
 
+; wkhtmltopdf
+Source: "..\wkhtmltox\bin\wkhtmltoimage.exe"; DestDir: "{app}"
+Source: "..\wkhtmltox\bin\wkhtmltopdf.exe"; DestDir: "{app}"
+Source: "..\wkhtmltox\bin\wkhtmltox.dll"; DestDir: "{app}"
 
 ; neue DLL
 Source: "..\TGPuttyLib\tgputtylib.dll"; DestDir: "{app}"; Flags: 32bit restartreplace uninsneveruninstall
 
 ; Lizenz-Infos
-Source: "..\..\CargoBay\OrgaMon_Info.html"; DestDir: "{app}"
-Source: "Distribution\Lizenz\gpl-3.0.txt"; DestDir: "{app}"; DestName: "Lizenz.txt"; Flags: onlyifdoesntexist
+; Anwendungs Zubehör
+Source: "..\CargoBay\OrgaMon_Info.html"; DestDir: "{app}"
 
 [Icons]
 Name: "{group}\OrgaMon-RC"; Filename: "{app}\OrgaMon-RC.exe"
 Name: "{group}\OrgaMon Info"; Filename: "{app}\OrgaMon_Info.html"
+[Run]
+Filename: "{app}\OrgaMon-RC.exe"; Description: "Starte OrgaMon RC"; Parameters: "{param:PostExec}"; Flags: postinstall nowait
 
 [Code]
 procedure WaitForExit;

@@ -587,6 +587,7 @@ var
   _WaitTime: string;
   ResultInfo: string;
   sUMFANG: TMemoryStream;
+  idMailVorlage_Rechnung : Integer;
 
   // Caching
   DATEI_ANLAGE: string;
@@ -673,6 +674,8 @@ var
 
 begin
   inc(PersonMailer_Active);
+
+  idMailVorlage_Rechnung := e_r_eMailVorlage(cMailVorlage_Rechnung);
 
   // Eine einzelne Mail wird gesendet
   BeginHourGlass;
@@ -904,7 +907,7 @@ begin
           else
           begin
 
-            // Empfänger ermitteln
+            // Empfänger werden hier ermittelt
             if (ZIEL_R < cRID_FirstValid) then
             begin
 
@@ -914,9 +917,16 @@ begin
             end
             else
             begin
+              //Schauen, ob eine explizite Rechnungs-E-Mail hinterlegt ist,
+              //wenn es denn eine Rechnung ist
+              if (idMailVorlage_Rechnung >= cRID_FirstValid) then
+              if FieldByName('VORLAGE_R').IsNotNull then
+              if (qEMAIL.FieldByName('VORLAGE_R').AsInteger = idMailVorlage_Rechnung) then
+                Versand_An := noblank(e_r_sqls('select EMAIL_2 from PERSON where RID=' + inttostr(ZIEL_R)));
 
               // im 1. Rang: aus "EMail"
-              Versand_An := noblank(e_r_sqls('select EMAIL from PERSON where RID=' + inttostr(ZIEL_R)));
+              if (Versand_An = '') then
+                Versand_An := noblank(e_r_sqls('select EMAIL from PERSON where RID=' + inttostr(ZIEL_R)));
 
               // im 2. Rang: aus "USER-ID"
               if (Versand_An = '') then

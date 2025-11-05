@@ -10,7 +10,6 @@ object FormArtikel: TFormArtikel
   Font.Height = -11
   Font.Name = 'Verdana'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnActivate = FormActivate
   OnCreate = FormCreate
@@ -18,8 +17,6 @@ object FormArtikel: TFormArtikel
   DesignSize = (
     980
     560)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Label3: TLabel
     Left = 33
     Top = 155
@@ -27,7 +24,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Land'
-    ExplicitTop = 283
   end
   object Label4: TLabel
     Left = 80
@@ -36,7 +32,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Originalverlag'
-    ExplicitTop = 283
   end
   object Label6: TLabel
     Left = 297
@@ -45,7 +40,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Lager'
-    ExplicitTop = 283
   end
   object Label5: TLabel
     Left = 808
@@ -54,7 +48,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'RID='
-    ExplicitTop = 291
   end
   object IB_Text1: TIB_Text
     Left = 839
@@ -64,12 +57,11 @@ object FormArtikel: TFormArtikel
     DataField = 'RID'
     DataSource = IB_DataSource1
     Anchors = [akLeft, akBottom]
-    ExplicitTop = 291
   end
   object Label10: TLabel
     Left = 396
     Top = 155
-    Width = 135
+    Width = 134
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Verlag Statistik, erst ab'
@@ -81,7 +73,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Label11'
-    ExplicitTop = 320
   end
   object Label12: TLabel
     Left = 539
@@ -90,7 +81,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Lieferzeit:'
-    ExplicitTop = 291
   end
   object Label13: TLabel
     Left = 599
@@ -99,7 +89,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Label13'
-    ExplicitTop = 291
   end
   object Label14: TLabel
     Left = 280
@@ -108,7 +97,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Sortiment'
-    ExplicitTop = 322
   end
   object Label15: TLabel
     Left = 98
@@ -117,7 +105,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Preiscode'
-    ExplicitTop = 325
   end
   object Label9: TLabel
     Left = 540
@@ -126,7 +113,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Inventur:'
-    ExplicitTop = 304
   end
   object Label16: TLabel
     Left = 599
@@ -135,7 +121,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Label16'
-    ExplicitTop = 304
   end
   object Label17: TLabel
     Left = 30
@@ -159,7 +144,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Dauer'
-    ExplicitTop = 366
   end
   object Label18: TLabel
     Left = 98
@@ -168,7 +152,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Schwierigkeitsgrad'
-    ExplicitTop = 411
   end
   object Label19: TLabel
     Left = 402
@@ -177,7 +160,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Komponist'
-    ExplicitTop = 366
   end
   object Label20: TLabel
     Left = 402
@@ -186,7 +168,6 @@ object FormArtikel: TFormArtikel
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = 'Arrangeur'
-    ExplicitTop = 412
   end
   object SpeedButton2: TSpeedButton
     Left = 467
@@ -292,7 +273,6 @@ object FormArtikel: TFormArtikel
       FFFF00FFFF00FFFF00FFFF00FFEDBD92DAA482DAA482DAA482DAA482DAA482DA
       A482DAA482DAA482B48176FF00FFFF00FFFF00FFFF00FFFF00FF}
     OnClick = SpeedButton4Click
-    ExplicitTop = 336
   end
   object SpeedButton5: TSpeedButton
     Left = 9
@@ -328,7 +308,6 @@ object FormArtikel: TFormArtikel
       FFFF00FFFF00FFFF00FFFF00FFEDBD92DAA482DAA482DAA482DAA482DAA482DA
       A482DAA482DAA482B48176FF00FFFF00FFFF00FFFF00FFFF00FF}
     OnClick = SpeedButton5Click
-    ExplicitTop = 298
   end
   object SpeedButton6: TSpeedButton
     Left = 490
@@ -515,7 +494,6 @@ object FormArtikel: TFormArtikel
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton10Click
-    ExplicitTop = 662
   end
   object SpeedButton11: TSpeedButton
     Left = 865
@@ -554,7 +532,6 @@ object FormArtikel: TFormArtikel
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton11Click
-    ExplicitTop = 662
   end
   object SpeedButton12: TSpeedButton
     Left = 839
@@ -593,7 +570,6 @@ object FormArtikel: TFormArtikel
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton12Click
-    ExplicitTop = 662
   end
   object SpeedButton13: TSpeedButton
     Left = 888
@@ -632,7 +608,6 @@ object FormArtikel: TFormArtikel
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton13Click
-    ExplicitTop = 662
   end
   object Label2: TLabel
     Left = 436
@@ -840,7 +815,6 @@ object FormArtikel: TFormArtikel
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton14Click
-    ExplicitTop = 662
   end
   object SpeedButton17: TSpeedButton
     Left = 184
@@ -934,7 +908,6 @@ object FormArtikel: TFormArtikel
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton15Click
-    ExplicitTop = 662
   end
   object Image3: TImage
     Left = 10
@@ -943,7 +916,6 @@ object FormArtikel: TFormArtikel
     Height = 121
     Anchors = [akLeft, akBottom]
     AutoSize = True
-    ExplicitTop = 325
   end
   object SpeedButton16: TSpeedButton
     Left = 363
@@ -1021,7 +993,7 @@ object FormArtikel: TFormArtikel
   object Label24: TLabel
     Left = 232
     Top = 238
-    Width = 115
+    Width = 114
     Height = 13
     Anchors = [akLeft, akBottom]
     Caption = '&GEMA Werknummer'
@@ -1506,7 +1478,7 @@ object FormArtikel: TFormArtikel
       object Label21: TLabel
         Left = 7
         Top = 7
-        Width = 165
+        Width = 164
         Height = 13
         Caption = 'Artikel Volltext Beschreibung'
       end
@@ -2852,13 +2824,5 @@ object FormArtikel: TFormArtikel
     Dataset = IB_Query3
     Left = 64
     Top = 176
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpSize, fpLocation]
-    StoredValues = <>
-    Left = 768
-    Top = 184
   end
 end

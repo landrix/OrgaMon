@@ -7,9 +7,9 @@ Name: "de"; MessagesFile: "compiler:Languages\German.isl"
 [Setup]
 PrivilegesRequired=Admin
 AppName=OrgaMon
-AppVerName=OrgaMon 8.764
-AppCopyright=Copyright (C) 1988-2024 Andreas Filsinger
-DefaultDirName={pf}\OrgaMon
+AppVerName=OrgaMon 8.768
+AppCopyright=Copyright (C) 1988-2025 Andreas Filsinger
+DefaultDirName={commonpf}\OrgaMon
 DefaultGroupName=OrgaMon
 UninstallDisplayIcon={app}\OrgaMon.exe
 LicenseFile=Distribution\Lizenz\gpl-3.0.txt
@@ -18,13 +18,13 @@ DisableReadyPage=yes
 DisableDirPage=yes
 DisableProgramGroupPage=yes
 DisableReadyMemo=yes
-OutputDir=..\..\CargoBay
-OutputBaseFilename=Setup-OrgaMon-8764
-AppVersion=8.764
-VersionInfoVersion=8.764.0.0
+OutputDir=..\CargoBay
+OutputBaseFilename=Setup-OrgaMon-768
+AppVersion=8.768
+VersionInfoVersion=8.768.0.0
 Compression=zip
-WizardImageFile=compiler:WizModernImage.bmp
-WizardSmallImageFile=compiler:WizModernSmallImage.bmp
+WizardImageFile=compiler:WizClassicImage.bmp
+WizardSmallImageFile=compiler:WizClassicSmallImage.bmp
 
 [Dirs]
 Name: "{app}\doc"
@@ -41,12 +41,16 @@ Name: "{userdocs}\OrgaMon\Daten\LeereDatenbank"; Flags: uninsneveruninstall
 Name: "{userdocs}\OrgaMon\Daten\anfisoft"; Flags: uninsneveruninstall
 
 [Files]
-
 ; Anwendungen
 Source: "C:\Program Files (x86)\OrgaMon\OrgaMon.exe"; DestDir: "{app}"; BeforeInstall: WaitForExit; Flags: ignoreversion restartreplace
 Source: "C:\Program Files (x86)\OrgaMon\OrgaMon.exe"; DestDir: "{app}"; DestName: "OrgaMon-RC.exe"; BeforeInstall: WaitForExit; Flags: ignoreversion restartreplace
 Source: "C:\Program Files (x86)\OrgaMon\cOrgaMon.exe"; DestDir: "{app}"; BeforeInstall: WaitForExit; Flags: ignoreversion restartreplace
 Source: "Distribution\Lizenz\gpl-3.0.txt"; DestDir: "{app}"; DestName: "Lizenz.txt"; Flags: onlyifdoesntexist
+
+; wkhtmltopdf
+Source: "..\wkhtmltox\bin\wkhtmltoimage.exe"; DestDir: "{app}"
+Source: "..\wkhtmltox\bin\wkhtmltopdf.exe"; DestDir: "{app}"
+Source: "..\wkhtmltox\bin\wkhtmltox.dll"; DestDir: "{app}"
 
 ; libxml2
 Source: "..\libxml2\bin\iconv.dll"; DestDir: "{app}"; Flags: 32bit onlyifdoesntexist uninsneveruninstall
@@ -65,7 +69,7 @@ Source: "..\FirebirdEmbed\Firebird-3.0.12.33787-0_Win32_embed\*"; DestDir: "{app
 Source: "..\FirebirdEmbed\Firebird-3.0.12.33787-0_Win32_embed\fbclient.dll"; DestDir: "{app}"; DestName: "gds32.dll"; 
 
 ; Anwendungs Zubehör
-Source: "..\..\CargoBay\OrgaMon_Info.html"; DestDir: "{app}"
+Source: "..\CargoBay\OrgaMon_Info.html"; DestDir: "{app}"
 
 ; Anwendungsdaten
 Source: "Distribution\OrgaMon-Dokumente.ini"; DestDir: "{userdocs}\OrgaMon"; DestName: "OrgaMon.ini"; Flags: onlyifdoesntexist

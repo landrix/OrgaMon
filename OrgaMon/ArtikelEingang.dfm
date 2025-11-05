@@ -11,14 +11,12 @@ object FormArtikelEingang: TFormArtikelEingang
   Font.Name = 'Verdana'
   Font.Style = []
   KeyPreview = True
-  OldCreateOrder = False
   OnActivate = FormActivate
+  OnCreate = FormCreate
   OnResize = FormResize
   DesignSize = (
     730
     338)
-  PixelsPerInch = 96
-  TextHeight = 13
   object Label2: TLabel
     Left = 7
     Top = 4
@@ -88,7 +86,6 @@ object FormArtikelEingang: TFormArtikelEingang
       472E10E3635828698DAAE37204D37346F3B4020B717A9CA093797616EEC83892
       1D429D871645441A5E69E2C54B634DC061F8FA62483D1691E036960A73A06F71
       E5C6BC5272DC298F68C92C4B1F3FFFD9}
-    ExplicitTop = 264
   end
   object SpeedButton2: TSpeedButton
     Left = 175
@@ -253,7 +250,6 @@ object FormArtikelEingang: TFormArtikelEingang
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000}
     OnClick = Image1Click
-    ExplicitLeft = 512
   end
   object SpeedButton3: TSpeedButton
     Left = 152
@@ -333,7 +329,6 @@ object FormArtikelEingang: TFormArtikelEingang
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton4Click
-    ExplicitLeft = 502
   end
   object SpeedButton5: TSpeedButton
     Left = 561
@@ -388,7 +383,6 @@ object FormArtikelEingang: TFormArtikelEingang
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton5Click
-    ExplicitLeft = 524
   end
   object SpeedButton6: TSpeedButton
     Left = 524
@@ -427,7 +421,6 @@ object FormArtikelEingang: TFormArtikelEingang
     ParentShowHint = False
     ShowHint = True
     OnClick = SpeedButton6Click
-    ExplicitLeft = 487
   end
   object Edit1: TEdit
     Left = 33
@@ -440,7 +433,6 @@ object FormArtikelEingang: TFormArtikelEingang
     ShowHint = True
     TabOrder = 0
     OnKeyPress = Edit1KeyPress
-    ExplicitTop = 257
   end
   object ListBox1: TListBox
     Left = 7
@@ -512,7 +504,6 @@ object FormArtikelEingang: TFormArtikelEingang
     ShowHint = True
     TabOrder = 6
     OnClick = Button11Click
-    ExplicitLeft = 661
   end
   object Button7: TButton
     Left = 320
@@ -549,8 +540,6 @@ object FormArtikelEingang: TFormArtikelEingang
     TabOrder = 8
     OnDblClick = DrawGrid1DblClick
     OnDrawCell = DrawGrid1DrawCell
-    ExplicitWidth = 532
-    ExplicitHeight = 163
     ColWidths = (
       64)
     RowHeights = (
@@ -578,7 +567,6 @@ object FormArtikelEingang: TFormArtikelEingang
     ParentFont = False
     TabOrder = 9
     Transparent = False
-    ExplicitLeft = 582
   end
   object Button2: TButton
     Left = 349
@@ -598,8 +586,6 @@ object FormArtikelEingang: TFormArtikelEingang
     Caption = '+7'
     TabOrder = 11
     OnClick = Button3Click
-    ExplicitLeft = 487
-    ExplicitTop = 257
   end
   object Button4: TButton
     Left = 567
@@ -610,8 +596,6 @@ object FormArtikelEingang: TFormArtikelEingang
     Caption = '+14'
     TabOrder = 12
     OnClick = Button4Click
-    ExplicitLeft = 530
-    ExplicitTop = 257
   end
   object Edit2: TEdit
     Left = 614
@@ -622,8 +606,6 @@ object FormArtikelEingang: TFormArtikelEingang
     TabOrder = 13
     TextHint = '+x|TT.MM.JJJJ'
     OnKeyPress = Edit2KeyPress
-    ExplicitLeft = 577
-    ExplicitTop = 257
   end
   object StaticText2: TStaticText
     Left = 152
@@ -643,7 +625,6 @@ object FormArtikelEingang: TFormArtikelEingang
     TabOrder = 14
   end
   object IB_Cursor1: TIB_Cursor
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT '
@@ -659,19 +640,10 @@ object FormArtikelEingang: TFormArtikelEingang
   object IB_Query1: TIB_Query
     ColumnAttributes.Strings = (
       'RID=NOTREQUIRED')
-    DatabaseName = '192.168.115.6:test.fdb'
     IB_Connection = DataModuleDatenbank.IB_Connection1
     SQL.Strings = (
       'SELECT * FROM PAKET')
     Left = 32
     Top = 126
-  end
-  object JvFormStorage1: TJvFormStorage
-    AppStorage = FormMain.JvAppIniFileStorage1
-    AppStoragePath = '%FORM_NAME%\'
-    Options = [fpSize, fpLocation]
-    StoredValues = <>
-    Left = 336
-    Top = 232
   end
 end

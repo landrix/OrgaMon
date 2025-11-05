@@ -38,7 +38,7 @@ uses
   IB_UpdateBar, IB_Components,  IB_Grid,  IB_Access,
   IB_Controls, IB_EditButton,
   // Jedi
-  JvComponentBase, JvFormPlacement,
+  JvComponentBase, JvFormPlacement,JvJvclUtils,
   // OrgaMon
   Datenbank;
 
@@ -104,7 +104,6 @@ type
     SpeedButton8: TSpeedButton;
     Button4: TButton;
     Button5: TButton;
-    JvFormStorage1: TJvFormStorage;
     Label18: TLabel;
     IB_Date5: TIB_Date;
     SpeedButton1: TSpeedButton;
@@ -138,6 +137,7 @@ type
     procedure SpeedButton2Click(Sender: TObject);
     procedure Button9Click(Sender: TObject);
   private
+    JvFormStorage1 : TJvFormStorage;
     { Private-Deklarationen }
     procedure NeuNehmer;
     procedure NeuVariante;
@@ -435,6 +435,10 @@ end;
 
 procedure TFormVertrag.FormCreate(Sender: TObject);
 begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
   PageControl1.ActivePage := TabSheet1;
 end;
 

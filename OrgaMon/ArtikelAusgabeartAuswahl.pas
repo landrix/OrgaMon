@@ -33,7 +33,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, IB_Components,
 
   // Jcl
-  JvComponentBase, JvFormPlacement,
+  JvComponentBase, JvFormPlacement, JvJvclUtils,
 
   // Tools
   Wordindex, anfix,
@@ -45,7 +45,6 @@ type
   TFormArtikelAusgabeartAuswahl = class(TForm)
     Edit1: TEdit;
     ListBox1: TListBox;
-    JvFormStorage1: TJvFormStorage;
     SpeedButton27: TSpeedButton;
     procedure FormActivate(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
@@ -53,7 +52,9 @@ type
     procedure ListBox1KeyPress(Sender: TObject; var Key: Char);
     procedure ListBox1DblClick(Sender: TObject);
     procedure SpeedButton27Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
+    JvFormStorage1 : TJvFormStorage;
     s: TWordIndex;
     All: TStringList;
     { Private-Deklarationen }
@@ -174,6 +175,14 @@ procedure TFormArtikelAusgabeartAuswahl.FormActivate(Sender: TObject);
 begin
   ensureData;
   Edit1.SetFocus;
+end;
+
+procedure TFormArtikelAusgabeartAuswahl.FormCreate(Sender: TObject);
+begin
+  JvFormStorage1 := TJvFormStorage.Create(self);
+  JvFormStorage1.AppStorage := FormMain.JvAppIniFileStorage1;
+  JvFormStorage1.AppStoragePath := '%FORM_NAME%\';
+  JvFormStorage1.Options := [fpSize, fpLocation];
 end;
 
 procedure TFormArtikelAusgabeartAuswahl.ListBox1DblClick(Sender: TObject);
